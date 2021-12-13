@@ -1,0 +1,28 @@
+/*
+1. Posicionamiento
+2. Modelo de caja (Box model)
+3. Tipografia
+4. Visuales
+5. Otros
+*/
+:root {
+    /*Variables de Color*/
+    --background: #f0f0f0;
+    --white: #ffffff;
+    --flame: #E05B30;
+    --black: #16140C;
+}
+* {
+    /*Se resetean los valores del navegador*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    /*Esto es para utilizar rem*/
+    font-size: 62.5%;
+    font-family: 'Roboto Condensed', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    color: var(--black);
+}
