@@ -6,5 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Details</title>
   </head>
-  <body></body>
+  <body>
+    <main class="container">
+      <div>
+        <h1>Detalle de nota de venta</h1>
+        <img src="../assets/logo.png" alt="Logo" />
+      </div>
+      <div>
+        <label for="user">
+          <p>Usuario</p>
+          <input type="text" id="user" />
+        </label>
+        <label for="market">
+          <p>Tienda</p>
+          <input type="text" id="market" />
+        </label>
+        <label for="date">
+          <p>Fecha</p>
+          <input type="text" id="date" />
+        </label>
+        <label for="no-venta">
+          <p>No Venta</p>
+          <input type="text" id="no-venta" />
+        </label>
+        <label for="client">
+          <p>Cliente</p>
+          <input type="text" id="client" />
+        </label>
+      </div>
+      <div>
+        <my-table></my-table>
+      </div>
+      <div>
+        <a href="#">Enviar</a><a href="javascript:window.print()">Imprimir</a
+        ><a href="./notes.html">Regresar</a>
+      </div>
+    </main>
+  </body>
 </html>
