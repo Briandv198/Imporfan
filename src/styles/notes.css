@@ -28,7 +28,7 @@
   width: 90%;
 }
 .container .input-container {
-  width: 90%;
+  width: 50%;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -39,7 +39,7 @@
   justify-content: flex-end;
   align-items: center;
 }
-.container .button-container my-button {
-  margin-inline: 10px;
+.container .button-container .button {
+  margin-inline-start: 20px;
   margin-block: 30px;
 }
