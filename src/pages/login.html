@@ -25,17 +25,34 @@
           <h3>Acceso al sistema</h3>
         </div>
         <form action="./notes.html">
-          <div class="input-container">
-            <label for="user">
-              <p>Usuario</p>
-              <input type="text" id="user" placeholder="Escribe aqui..." />
-            </label>
-            <label for="password" aria-placeholder="Escribe aqui...">
-              <p>Contraseña</p>
-              <input type="password" id="password" />
-            </label>
-          </div>
-          <div class="button-primary"><input type="submit" value="Enviar" class="submit" /></div>
+          <my-input for="user" id="user" type="text" class="container-input"
+            >Usuario</my-input
+          >
+          <my-input
+            for="password"
+            id="password"
+            type="password"
+            class="container-input"
+            >Contraseña</my-input
+          >
+          <!-- 
+            Estilo de botones: primary-button | secondary-button 
+            Tipo de botones: input | button
+            Atributos:
+            type-button: tipo de boton ( input | a )
+            value: Texto del boton
+            type: submit ( solo para el type-button: input )
+            button: Elige el estilo del boton ( primary-button | secondary-button )
+            href: Direccion de envio ( Solo para type-button: button )
+
+          -->
+          <my-button
+            typebutton="input"
+            type="submit"
+            value="Enviar"
+            button="primary-button"
+            class="primary-button-container"
+          ></my-button>
         </form>
         <p>
           El usuario accederá al sistema con la misma clave que utiliza para el
@@ -43,5 +60,7 @@
         </p>
       </div>
     </main>
+    <script type="module" src="../components/Buttons.js"></script>
+    <script type="module" src="../components/Inputs.js"></script>
   </body>
 </html>
