@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/notes.css" />
+    <link rel="stylesheet" href="../styles/details.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap"
@@ -15,56 +15,96 @@
   <body>
     <main class="container">
       <div class="header-container">
-        <h1>Notas de venta</h1>
+        <h1>Detalle de nota de venta</h1>
         <div class="image">
           <img src="../assets/logo.png" alt="Logo" />
         </div>
       </div>
       <form action="./details.html">
         <div class="input-container">
-          <my-input value="Usuario" type="text" for="user" id="user" little-font
-            >Usuario</my-input
-          >
-          <my-input
-            value="Tienda"
-            type="text"
-            for="market"
-            id="market"
-            little-font
-            >Tienda</my-input
-          >
-          <my-input value="Fecha" type="text" for="date" id="date" little-font
-            >Fecha</my-input
-          >
-          <my-input value="NoVenta" type="text" for="no" id="no" little-font
-            >No Venta</my-input
-          >
-          <my-input value="Cliente" type="text" for="client" id="client" little-font
-            >Cliente</my-input
-          >
+          <label for="user" class="label-container">
+            <p>Usuario</p>
+            <input type="text" id="user" placeholder="Escribe aqui..." />
+          </label>
+          <label for="market" class="label-container">
+            <p>Tienda</p>
+            <input type="text" id="market" placeholder="Escribe aqui..." />
+          </label>
+          <label for="date" class="label-container">
+            <p>Fecha</p>
+            <input type="text" id="date" placeholder="Escribe aqui..." />
+          </label>
+          <label for="nventa" class="label-container">
+            <p>No Venta</p>
+            <input type="text" id="nventa" placeholder="Escribe aqui..." />
+          </label>
+          <label for="client" class="label-container">
+            <p>Cliente</p>
+            <input type="text" id="client" placeholder="Escribe aqui..." />
+          </label>
         </div>
         <div>
-          <my-table></my-table>
+          <table class="table">
+            <tr class="table--header">
+              <th>Clave</th>
+              <th>Descripción</th>
+              <th>Almacén</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
         </div>
         <div class="button-container">
-          <my-button
-            typebutton="input"
-            type="submit"
-            value="Enviar"
-            button="primary-button"
-          ></my-button>
-          <my-button
-            typebutton="a"
-            value="Imprimir"
-            button="secondary-button"
-            href="javascript:window.print()"
-          ></my-button>
-          <my-button
-            typebutton="a"
-            value="Regresar"
-            button="secondary-button"
-            href="./notes.html"
-          ></my-button>
+          <div class="button primary-button">
+            <input type="submit" value="Enviar" />
+          </div>
+          <div class="button secondary-button">
+            <a href="javascript:window.print()" class="">Imprimir</a>
+          </div>
+          <div class="button secondary-button">
+            <a href="./notes.html" class="">Regresar</a>
+          </div>
         </div>
       </form>
     </main>
