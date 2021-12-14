@@ -17,14 +17,12 @@ class myInput extends HTMLElement {
     const template = document.createElement("template");
 
     template.innerHTML = `
-              <article>
                 <label for=${this.for}>
                     <p>
                         <slot></slot>
                     </p>
-                    <input type=${this.type} id=${this.id} placeholder="Escribe aqui..." />
+                    <input type=${this.type} id=${this.id} ${this.value ? `value=${this.value}` : '' } placeholder="Escribe aqui..." />
                 </label>
-              </article>
               ${this.getStyles()}
           `;
     return template;
@@ -58,6 +56,9 @@ class myInput extends HTMLElement {
                 }
                 input:hover {
                     border: 0;
+                }
+                :host([little-font]) label p {
+                  font-size: 1.8rem;
                 }
               </style>
           `;

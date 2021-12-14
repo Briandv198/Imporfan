@@ -15,27 +15,26 @@
     <title>Login</title>
   </head>
   <body>
-    <main>
-      <div class="container">
-        <div class="image">
-          <img src="../assets/logo.png" alt="Logo" />
-        </div>
-        <div class="text-container">
-          <h1>Bienvenid@!!!</h1>
-          <h3>Acceso al sistema</h3>
-        </div>
-        <form action="./notes.html">
-          <my-input for="user" id="user" type="text" class="container-input"
-            >Usuario</my-input
-          >
-          <my-input
-            for="password"
-            id="password"
-            type="password"
-            class="container-input"
-            >Contraseña</my-input
-          >
-          <!-- 
+    <main class="container">
+      <div class="image">
+        <img src="../assets/logo.png" alt="Logo" />
+      </div>
+      <div class="text-container">
+        <h1>Bienvenid@!!!</h1>
+        <h3>Acceso al sistema</h3>
+      </div>
+      <form action="./notes.html">
+        <my-input for="user" id="user" type="text" class="container-input"
+          >Usuario</my-input
+        >
+        <my-input
+          for="password"
+          id="password"
+          type="password"
+          class="container-input"
+          >Contraseña</my-input
+        >
+        <!-- 
             Estilo de botones: primary-button | secondary-button 
             Tipo de botones: input | button
             Atributos:
@@ -46,19 +45,18 @@
             href: Direccion de envio ( Solo para type-button: button )
 
           -->
-          <my-button
-            typebutton="input"
-            type="submit"
-            value="Enviar"
-            button="primary-button"
-            class="primary-button-container"
-          ></my-button>
-        </form>
-        <p>
-          El usuario accederá al sistema con la misma clave que utiliza para el
-          SAE
-        </p>
-      </div>
+        <my-button
+          typebutton="input"
+          type="submit"
+          value="Enviar"
+          button="primary-button"
+          class="primary-button-container"
+        ></my-button>
+      </form>
+      <p>
+        El usuario accederá al sistema con la misma clave que utiliza para el
+        SAE
+      </p>
     </main>
     <script type="module" src="../components/Buttons.js"></script>
     <script type="module" src="../components/Inputs.js"></script>

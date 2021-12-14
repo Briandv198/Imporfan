@@ -6,23 +6,32 @@
 5. Otros
 */
 :root {
-    /*Variables de Color*/
-    --background: #f0f0f0;
-    --white: #ffffff;
-    --flame: #E05B30;
-    --black: #16140C;
+  /*Variables de Color*/
+  --background: #f0f0f0;
+  --white: #ffffff;
+  --flame: #e05b30;
+  --black: #16140c;
 }
 * {
-    /*Se resetean los valores del navegador*/
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  /*Se resetean los valores del navegador*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
-    /*Esto es para utilizar rem*/
-    font-size: 62.5%;
-    font-family: 'Roboto Condensed', sans-serif;
-    scroll-behavior: smooth;
-    background-color: var(--background);
-    color: var(--black);
+  /*Esto es para utilizar rem*/
+  font-size: 62.5%;
+  font-family: "Roboto Condensed", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--black);
+}
+main {
+    margin: 0 auto;
+    margin-block-start: 50px;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
 }

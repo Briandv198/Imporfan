@@ -4,28 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/notes.css">
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/notes.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Notes</title>
   </head>
   <body>
     <main class="container">
-      <div>
+      <div class="header-container">
         <h1>Notas de venta</h1>
-        <img src="../assets/logo.png" alt="Logo" />
+        <div class="image">
+          <img src="../assets/logo.png" alt="Logo" />
+        </div>
       </div>
-     
-      <div>
-        <my-table></my-table>
-      </div>
-      <div>
-        <a href="./details.html">Enviar</a
-        ><a href="javascript:window.print()">Imprimir</a
-        ><a href="./login.html">Regresar</a>
-      </div>
+      <form action="./details.html">
+        <div class="input-container">
+          <my-input value="Usuario" type="text" for="user" id="user" little-font
+            >Usuario</my-input
+          >
+          <my-input
+            value="Tienda"
+            type="text"
+            for="market"
+            id="market"
+            little-font
+            >Tienda</my-input
+          >
+          <my-input value="Fecha" type="text" for="date" id="date" little-font
+            >Fecha</my-input
+          >
+        </div>
+        <div>
+          <my-table></my-table>
+        </div>
+        <div class="button-container">
+          <my-button
+            typebutton="input"
+            type="submit"
+            value="Enviar"
+            button="primary-button"
+          ></my-button>
+          <my-button
+            typebutton="a"
+            value="Imprimir"
+            button="secondary-button"
+            href="javascript:window.print()"
+          ></my-button>
+          <my-button
+            typebutton="a"
+            value="Regresar"
+            button="secondary-button"
+            href="./login.html"
+          ></my-button>
+        </div>
+      </form>
     </main>
+    <script type="module" src="../components/Inputs.js"></script>
+    <script type="module" src="../components/Buttons.js"></script>
   </body>
 </html>
