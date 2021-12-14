@@ -39,16 +39,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.container form .container-input {
-  width: 100%;
-}
-.container form .primary-button-container {
-  margin-block-start: 30px;
-}
+} 
 .container p {
   width: 100%;
   font-size: 1.4rem;
   font-weight: lighter;
   text-align: center;
+}
+.button {
+  margin-block-start: 50px;
+}
+.label-container {
+  margin-block-start: 20px;
+}
+.label-container input {
+  margin-block-start: 8px;
 }
