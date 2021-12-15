@@ -2,7 +2,8 @@
 
 ## Comenzando 🚀
 
-_Parar descargar el proyecto hay que hacer un git clone de https://github.com/Briandv198/rick-morty.git_
+_Parar descargar el proyecto hay que hacer un git clone de https://github.com/Briandv198/Imporfan.git_
+_Parar ver el proyecto vea el siguiente link: https://briandv198.github.io/Imporfan/src/pages/login.html_
 
 ### Pre-requisitos 📋
 
