@@ -9,13 +9,17 @@
   background-color: var(--white);
 }
 .container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 90%;
 }
 .container .header-container {
   margin-block: 30px;
   width: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .container .header-container h1 {

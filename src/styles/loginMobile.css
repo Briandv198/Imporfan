@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (max-width: 860px) {
   .container {
     width: 90vw;
   }
@@ -18,7 +18,7 @@
     width: 80%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .container .text-container {
     width: 80%;
     align-items: flex-start;

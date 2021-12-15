@@ -35,6 +35,9 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+.container {
+  margin-block: 50px; 
+}
 /* ----------Botones---------- */
 .button {
   display: flex;
@@ -152,17 +155,11 @@ h1 {
   border-collapse: collapse;
   border-radius: 5px;
 }
-.container .table-container table .border-top-left {
+.container .table-container table .border-top-left input {
   border-radius: 5px 0 0 0;
 }
-.container .table-container table .border-top-right {
+.container .table-container table .border-top-right input {
   border-radius: 0 5px 0 0;
-}
-.container .table-container table .border-bottom-right {
-  border-radius: 0 0 5px 0;
-}
-.container .table-container table .border-bottom-left {
-  border-radius: 0 0 0 5px;
 }
 .container .table-container table th input {
   display: inline-block;
@@ -184,12 +181,12 @@ h1 {
   border:none;
   font-size: 1.4rem;
   font-weight: lighter;
+  border:  1px rgba(224, 91, 48, .2) solid;
 }
 .container .table-container table td,
 th {
-  border-radius: 1px;
+  border-radius: 5px;
   text-align: center;
-  border:  1px rgba(224, 91, 48, .2) solid;
   /* box-shadow: 0px 0px 3px rgba(224, 91, 48, .8); */
   box-shadow: 0px 0px 19px rgba(22, 20, 12, 0.25);
 }
