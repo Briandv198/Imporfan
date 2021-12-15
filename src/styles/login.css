@@ -49,6 +49,7 @@
 .button {
   margin-block-start: 50px;
 }
-.label-container {
+.container .label-container {
+  width: 100%;
   margin-block-start: 20px;
 }

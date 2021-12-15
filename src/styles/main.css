@@ -36,7 +36,7 @@ h1 {
   text-align: center;
 }
 /* ----------Botones---------- */
-.button { 
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ h1 {
   background-color: rgba(22, 20, 12, 0);
 }
 .secondary-button {
-  border: 3px solid;
+  border: 2px solid;
   border-color: var(--flame);
 }
 .secondary-button input {
@@ -111,13 +111,13 @@ h1 {
 }
 /* ----------Inputs---------- */
 .label-container {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .label-container p {
+  margin-block-start: 15px;
   font-size: 2.2rem;
   font-weight: normal;
   text-align: center;
@@ -138,3 +138,59 @@ h1 {
 .label-container input:hover {
   border: 0;
 }
+/* ----------Tablas---------- */
+.container .table-container {
+  margin-block: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* box-shadow: 0px 0px 19px rgba(22, 20, 12, 0.25); */
+  border-radius: 5px;
+}
+.container .table-container table {
+  margin-inline: 7px;
+  width: 100%;
+  border-spacing: 0px;
+  border-radius: 5px;
+}
+.container .table-container table .border-top-left {
+  border-radius: 5px 0 0 0;
+}
+.container .table-container table .border-top-right {
+  border-radius: 0 5px 0 0;
+}
+.container .table-container table .border-bottom-left {
+  border-radius: 0 0 0 5px;
+}
+.container .table-container table .border-bottom-right {
+  border-radius: 0 0 5px 0;
+}
+.container .table-container table th {
+  background-color: var(--flame);
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: var(--white);
+}
+.container .table-container table td {
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+.container .table-container table td,
+th {
+  border-radius: 1px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 3px rgba(224, 91, 48, .8);
+}
+/* .container .table-container table .border-left {
+  border-right: 1px rgba(224, 91, 48, 0.2) solid;
+  box-shadow: inset 0px 0px .5px 1px rgba(224, 91, 48, .4);
+}
+.container .table-container table .border-top {
+  border-top: 1px rgba(224, 91, 48, 0.2) solid; 
+  box-shadow:  0px 0px 3px rgba(224, 91, 48, .5); 
+
+  box-shadow:  1px 1px 5px rgba(224, 91, 48, .5);  
+  box-shadow:  -1px -1px 5px rgba(224, 91, 48, .5);  
+} */

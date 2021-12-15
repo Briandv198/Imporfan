@@ -9,11 +9,11 @@
   background-color: var(--white);
 }
 .container form {
+  width: 90%;
   display: flex;
   flex-direction: column  ;
   justify-content: center;
   align-items: center;
-  width: 90%;
 }
 .container .header-container {
   margin-block: 30px;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 .container .header-container h1 {
-  margin-inline-start: 55px;
+  margin-inline-start: 7px;
 }
 .container .header-container .image {
   text-align: end;
@@ -50,45 +50,4 @@
 }
 .container .label-container p {
   font-size: 1.8rem;
-}
-.container .table-container {
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  box-shadow: 0px 0px 19px rgba(22, 20, 12, 0.25);
-  border-radius: 5px;
-}
-.container .table-container table {
-  width: 100%;
-  table-layout: fixed;
-  border-spacing: 0; 
-  border-radius: 5px;
-}
-.container .table-container table .border-top-left {
-  border-radius: 5px 0 0 0;
-}
-.container .table-container table .border-top-right {
-  border-radius: 0 5px 0 0;
-}
-.container .table-container table th {
-  background-color: var(--flame);
-  font-size: 1.8rem;
-  font-weight: normal;
-  color: var(--white);
-}
-.container .table-container table td {
-    font-size: 1.4rem;
-  font-weight: lighter;
-}
-.container .table-container table td, th {
-  padding: 10px;
-  text-align: center;
-}
-.container .table-container table .border-left {
-  border-right: 1px var(--flame) solid;
-}
-.container .table-container table .border-top {
-  border-top: 1px var(--flame) solid;
 }

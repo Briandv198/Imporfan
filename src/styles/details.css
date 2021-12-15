@@ -19,7 +19,7 @@
   align-items: center;
 }
 .container .header-container h1 {
-  margin-inline-start: 55px;
+  margin-inline-start: 7px;
 }
 .container .header-container .image {
   text-align: end;
@@ -30,8 +30,9 @@
 .container .input-container {
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content:flex-start;
   align-items: center;
+  flex-wrap: wrap-reverse;
 }
 .container .button-container {
   width: 100%;
@@ -46,3 +47,16 @@
 .container .label-container p {
   font-size: 1.8rem;
 }
+  .container .table-container .little-font {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    /* font-size: 1.4rem; */
+    font-weight: lighter;
+    text-align: right;
+    box-shadow: none;
+  }
+  .container .table-container .opacity-0 {
+    opacity: 0;
+  }
