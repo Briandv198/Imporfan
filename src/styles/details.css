@@ -52,11 +52,13 @@
     justify-content: flex-end;
     align-items: center;
     padding: 10px;
-    /* font-size: 1.4rem; */
+    font-size: 1.4rem;
     font-weight: lighter;
     text-align: right;
     box-shadow: none;
+    border: none;
   }
   .container .table-container .opacity-0 {
+    border: none;
     opacity: 0;
   }
