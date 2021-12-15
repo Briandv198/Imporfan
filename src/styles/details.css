@@ -19,10 +19,11 @@
   margin-block: 30px;
   width: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .container .header-container h1 {
+  text-align: left;
   margin-inline-start: 7px;
 }
 .container .header-container .image {

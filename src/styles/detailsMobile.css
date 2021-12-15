@@ -1,9 +1,11 @@
 @media (max-width: 860px) {
   .container .header-container {
+    justify-content: center;
     flex-direction: column-reverse;
   }
   .container .header-container h1 {
     margin-block-start: 50px;
+    text-align: center;
   }
   .container .header-container .image {
     text-align: center;
@@ -34,7 +36,7 @@
     width: 800px;
   }
   .container .button-container {
-      justify-content: center;
+    justify-content: center;
     /* flex-direction: column; */
   }
   .container .button-container .button {
