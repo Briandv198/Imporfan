@@ -39,6 +39,13 @@
   align-items: center;
   flex-wrap: wrap-reverse;
 }
+.container .table-container {
+  padding-block: 25px;
+  display: block;
+  align-items: center;
+  overflow-y: scroll;
+  height: 250px;
+}
 .container .button-container {
   width: 100%;
   display: flex;

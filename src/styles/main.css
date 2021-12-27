@@ -38,6 +38,29 @@ h1 {
 .container {
   margin-block: 50px; 
 }
+.container .table-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.container .table-container::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.container .table-container::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+} 
+.container .table-container::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+.container .table-container::-webkit-scrollbar-thumb {
+  background-color: var(--flame);
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.container .table-container::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
 /* ----------Botones---------- */
 .button {
   display: flex;
@@ -159,12 +182,12 @@ h1 {
   margin-block: 50px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   border-radius: 5px;
 }
 .container .table-container table {
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   border-radius: 5px;
 }
@@ -186,10 +209,10 @@ h1 {
   text-align: center;
   color: var(--white);
 }
-.container .table-container table td input {
+.container .table-container table td input, select {
   display: inline-block;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 10px;
   border:none;
   font-size: 1.4rem;

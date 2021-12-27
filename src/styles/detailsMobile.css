@@ -44,4 +44,10 @@
     margin-block-start: 25px;
     margin-block-end: 45px;
   }
+  .container .table-container::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+  .container .table-container::-webkit-scrollbar:vertical {
+    width: 6px;
+  }
 }
