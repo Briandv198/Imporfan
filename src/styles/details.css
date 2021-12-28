@@ -35,9 +35,61 @@
 .container .input-container {
   width: 100%;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap-reverse;
+}
+.container .cliente {
+  width: 100%;
+  margin-block-start: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.container .cliente label {
+  width: 50%;
+  display: inline-block;
+  font-size: 1.6rem;
+  transform: scale(1, 1);
+}
+.container .cliente label input {
+  margin-inline-start: 8px;
+  padding: 0 5px;
+  width: 80%;
+  min-width: 100px;
+  max-width: 300px;
+  height: 28px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: lighter;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0px 0px 5px rgba(22, 20, 12, 0.25);
+}
+.container .cliente .cliente-busqueda {
+  margin-block-start: 15px;
+  width: 100%;
+}
+.container .cliente .cliente-busqueda h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.container .cliente .cliente-busqueda label {
+  margin-block: 20px;
+}
+.container .cliente .cliente-busqueda label select {
+  margin-block-start: 10px;
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  box-shadow: 0px 0px 5px rgba(22, 20, 12, 0.25);
+}
+.container .cliente .datos-cliente {
+  font-size: 1.6rem;
+  font-weight: lighter;
 }
 .container .table-container {
   padding-block: 25px;
@@ -59,18 +111,18 @@
 .container .label-container p {
   font-size: 1.8rem;
 }
-  .container .table-container .little-font {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px;
-    font-size: 1.4rem;
-    font-weight: lighter;
-    text-align: right;
-    box-shadow: none;
-    border: none;
-  }
-  .container .table-container .opacity-0 {
-    border: none;
-    opacity: 0;
-  }
+.container .table-container .little-font {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  text-align: right;
+  box-shadow: none;
+  border: none;
+}
+.container .table-container .opacity-0 {
+  border: none;
+  opacity: 0;
+}

@@ -44,6 +44,47 @@
             <input type="text" id="client" placeholder="Escribe aqui..." />
           </label>
         </div>
+        <div class="cliente">
+          <form action="" method="">
+            <label for="buscarCliente">
+              Buscar Cliente:
+              <input
+              name="buscarCliente"
+              type="text"
+              id="busca_Cliente"
+              placeholder="Cliente"
+            />
+            </label>
+          </form>
+          <div class="cliente-busqueda">
+            <h3>Datos Cliente</h3>
+            <label for="nombreCliente">
+              Cliente:
+              <select
+              name="nombreCliente"
+              id="Clientes"
+              onchange="buscarDato(value)"
+            ></select>
+            </label>
+
+            <div class="datos-cliente">
+              <!-- Datos Cliente -->
+              <table>
+                <thead>
+                  <tr>
+                    <td>RFC</td>
+                    <td>Dirección</td>
+                    <td>Teléfono</td>
+                    <td>Correo</td>
+                  </tr>
+                </thead>
+                <tbody id="datos">
+                  <!-- LLENADO DE DATOS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
         <div class="table-container">
           <table class="table">
             <tr>

@@ -50,4 +50,17 @@
   .container .table-container::-webkit-scrollbar:vertical {
     width: 6px;
   }
+  .container .cliente-busqueda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .cliente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
