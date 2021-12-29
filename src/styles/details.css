@@ -112,8 +112,8 @@
   align-items: center;
 }
 .container .container-buttons-table .boton-mas {
-  margin-inline-end: 20px;
-  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  margin-inline-start: 20px;
   width: 30px;
   height: 30px;
   background-image: url('../assets/BotonMas.png');
@@ -128,8 +128,8 @@
   cursor: pointer;
 }
 .container .container-buttons-table .boton-menos {
-  margin-inline-end: 20px;
-  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  margin-inline-start: 20px;
   width: 30px;
   height: 30px;
   background-image: url('../assets/BotonMenos.png');

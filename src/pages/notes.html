@@ -42,9 +42,6 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
-                    <div class="boton-mas" onclick="addRow()"></div>
-                  </th>
                   <th class="border-top-left">
                     <input type="text" readonly value="Nota" />
                   </th>
@@ -54,18 +51,21 @@
                   <th class="border-top-right">
                     <input type="text" readonly value="Total" />
                   </th>
+                  <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                    <div class="boton-mas" onclick="addRow()"></div>
+                  </th>
                 </tr>
               </thead>
               <tbody id="datos-tabla">
                 <tr class="row0">
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input id="importe0" type="text" /></td>
+                  <td><input id="iva0" type="text" /></td>
+                  <td><input id="total0" type="text" /></td>
                   <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
                     <div class="boton-menos" onclick="deleteRow(0)"></div>
                   </td>
-                  <td><input type="text" /></td>
-                  <td><input type="text" /></td>
-                  <td><input type="text" /></td>
-                  <td><input type="text" /></td>
-                  <td><input type="text" /></td>
                 </tr>
               </tbody>
             </table>
@@ -86,22 +86,22 @@
     </main>
 
     <script>
-      i++;
       var i = 0;
       var addRow = () => {
+        i++;
         console.log(i);
         const div = document.querySelector("#datos-tabla")
         const template = document.createElement("tr");
         template.className = `row${i}`;
         template.innerHTML =`
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td><input id="importe${i}" type="text" /></td>
+        <td><input id="iva${i}" type="text" /></td>
+        <td><input id="total${i}" type="text" /></td>
         <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
           <div class="boton-menos" onclick="deleteRow(${i})"></div>
-          </td>      
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
-          <td><input type="text" /></td>
+        </td>      
           `;
           
           div.appendChild(template);
