@@ -182,11 +182,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
+  width: 95%;
   border-radius: 5px;
 }
 .container .table-container table {
-  width: 90%;
+  width: 95%;
   border-collapse: collapse;
   border-radius: 5px;
 }
