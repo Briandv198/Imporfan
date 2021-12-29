@@ -92,6 +92,7 @@
   font-weight: lighter;
 }
 .container .table-container {
+  margin-block: 25px;
   padding-block: 25px;
   display: block;
   align-items: center;

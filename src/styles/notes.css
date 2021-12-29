@@ -39,6 +39,7 @@
   flex-wrap: wrap-reverse;
 }
 .container .table-container {
+  margin-block: 25px;
   padding-block: 25px;
   display: block;
   align-items: center;
