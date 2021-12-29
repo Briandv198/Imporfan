@@ -179,7 +179,6 @@ h1 {
 }
 /* ----------Tablas---------- */
 .container .table-container {
-  margin-block: 50px;
   display: flex;
   justify-content: center;
   align-items: flex-start;

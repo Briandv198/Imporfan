@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/notes.css" />
     <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/notesMobile.css">
+    <link rel="stylesheet" href="../styles/notesMobile.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap"
       rel="stylesheet"
@@ -21,163 +21,93 @@
           <img src="../assets/logo.png" alt="Logo" />
         </div>
       </div>
-        <form action="./details.html">
-          <div class="input-container">
-            <label for="user" class="label-container">
-              <p>Usuario</p>
-              <input type="text" id="user" placeholder="Escribe aqui..." />
-            </label>
-            <label for="market" class="label-container">
-              <p>Tienda</p>
-              <input type="text" id="market" placeholder="Escribe aqui..." />
-            </label>
-            <label for="date" class="label-container">
-              <p>Fecha</p>
-              <input type="text" id="date" placeholder="Escribe aqui..." />
-            </label>
+      <form action="./details.html">
+        <div class="input-container">
+          <label for="user" class="label-container">
+            <p>Usuario</p>
+            <input type="text" id="user" placeholder="Escribe aqui..." />
+          </label>
+          <label for="market" class="label-container">
+            <p>Tienda</p>
+            <input type="text" id="market" placeholder="Escribe aqui..." />
+          </label>
+          <label for="date" class="label-container">
+            <p>Fecha</p>
+            <input type="text" id="date" placeholder="Escribe aqui..." />
+          </label>
+        </div>
+
+        <div class="container-buttons-table">
+          <div class="contenedor-botones">
+            <div class="boton-mas" onclick="addRow()"></div>
+            <div class="boton-menos" onclick="deleteRow()"></div>
           </div>
           <div class="table-container">
             <table class="table">
-              <tr>
-                <th class="border-top-left"><input type="text" readonly value="Nota"></th>
-                <th><input type="text" readonly value="Cliente"></th>
-                <th><input type="text" readonly value="Importe"></th>
-                <th><input type="text" readonly value="Iva"></th>
-                <th class="border-top-right"><input type="text" readonly value="Total"></th>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
-              <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-              </tr>
+              <thead>
+                <tr>
+                  <th class="border-top-left">
+                    <input type="text" readonly value="Nota" />
+                  </th>
+                  <th><input type="text" readonly value="Cliente" /></th>
+                  <th><input type="text" readonly value="Importe" /></th>
+                  <th><input type="text" readonly value="Iva" /></th>
+                  <th class="border-top-right">
+                    <input type="text" readonly value="Total" />
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="datos-tabla">
+                <tr>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+              </tbody>
             </table>
           </div>
-          <div class="button-container">
-            <div class="button primary-button">
-              <input type="submit" value="Enviar" />
-            </div>
-            <div class="button secondary-button">
-              <a href="javascript:window.print()" class="">Imprimir</a>
-            </div>
-            <div class="button secondary-button">
-              <a href="./login.html" class="">Regresar</a>
-            </div>
+        </div>
+        <div class="button-container">
+          <div class="button primary-button">
+            <input type="submit" value="Enviar" />
           </div>
-        </form>
+          <div class="button secondary-button">
+            <a href="javascript:window.print()" class="">Imprimir</a>
+          </div>
+          <div class="button secondary-button">
+            <a href="./login.html" class="">Regresar</a>
+          </div>
+        </div>
+      </form>
     </main>
+    <script>
+      var i = 0;
+      var addRow = () => {
+        i++;
+        console.log(i);
+        const div = document.querySelector("#datos-tabla");
+        const template = document.createElement("tr");
+        template.className = `row${i}`;
+        template.innerHTML = `
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          `;
+
+        div.appendChild(template);
+      };
+      var deleteRow = () => {
+        console.log(i);
+        const padre = document.querySelector("#datos-tabla");
+        const hijo = document.querySelector(`.row${i}`);
+
+        padre.removeChild(hijo);
+        i--;
+      };
+    </script>
   </body>
 </html>

@@ -85,59 +85,101 @@
             </div>
           </div>
         </div>
-        <div class="table-container">
-          <table class="table">
-            <tr>
-              <th class="border-top-left">
-                <input type="search" readonly value="Busca" />
-              </th>
-              <th><input type="select" readonly value="Clave" /></th>
-              <th><input type="text" readonly value="Descripcion" /></th>
-              <th><input type="text" readonly value="Almacen" /></th>
-              <th><input type="text" readonly value="Cantidad" /></th>
-              <th><input type="text" readonly value="Precio" /></th>
-              <th class="border-top-right">
-                <input type="text" readonly value="Total" />
-              </th>
-            </tr>
-            <tr>
-              <td><input type="text" /></td>
-              <td><select name="" id=""></select></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-              <td><input type="text" /></td>
-            </tr>
-            <tr>
-              <td class="opacity-0" colspan="5"></td>
-              <td class="little-font">Subtotal</td>
-              <td class="border-top"><input type="text" /></td>
-            </tr>
-            <tr>
-              <td class="opacity-0" colspan="5"></td>
-              <td class="little-font">Iva</td>
-              <td class="border-top"><input type="text" /></td>
-            </tr>
-            <tr>
-              <td class="border-bottom-left opacity-0" colspan="5"></td>
-              <td class="little-font">Total</td>
-              <td class="border-top"><input type="text" /></td>
-            </tr>
-          </table>
+        <div class="container-buttons-table">          
+          <div class="contenedor-botones">
+            <div class="boton-mas" onclick="addRow()"></div>
+            <div class="boton-menos" onclick="deleteRow()"></div>
+          </div>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="border-top-left">
+                    <input type="search" readonly value="Busca" />
+                  </th>
+                  <th><input type="select" readonly value="Clave" /></th>
+                  <th><input type="text" readonly value="Descripcion" /></th>
+                  <th><input type="text" readonly value="Almacen" /></th>
+                  <th><input type="text" readonly value="Cantidad" /></th>
+                  <th><input type="text" readonly value="Precio" /></th>
+                  <th class="border-top-right">
+                    <input type="text" readonly value="Total" />
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="datos-tabla">
+                <tr>
+                  <td><input type="text" /></td>
+                  <td><select name="" id=""></select></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="opacity-0" colspan="5"></td>
+                  <td class="little-font">Subtotal</td>
+                  <td class="border-top"><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td class="opacity-0" colspan="5"></td>
+                  <td class="little-font">Iva</td>
+                  <td class="border-top"><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td class="border-bottom-left opacity-0" colspan="5"></td>
+                  <td class="little-font">Total</td>
+                  <td class="border-top"><input type="text" /></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
-        <div class="button-container">
-          <div class="button primary-button">
-            <input type="submit" value="Enviar" />
+          <div class="button-container">
+            <div class="button primary-button">
+              <input type="submit" value="Enviar" />
+            </div>
+            <div class="button secondary-button">
+              <a href="javascript:window.print()" class="">Imprimir</a>
+            </div>
+            <div class="button secondary-button">
+              <a href="./notes.html" class="">Regresar</a>
+            </div>
           </div>
-          <div class="button secondary-button">
-            <a href="javascript:window.print()" class="">Imprimir</a>
-          </div>
-          <div class="button secondary-button">
-            <a href="./notes.html" class="">Regresar</a>
-          </div>
-        </div>
       </form>
     </main>
+
+    <script>
+      var i = 0;
+      var addRow = () => {
+        i++;
+        console.log(i);
+        const div = document.querySelector("#datos-tabla")
+        const template = document.createElement("tr");
+        template.className = `row${i}`;
+        template.innerHTML =`
+          <td><input type="text" /></td>
+          <td><select name="" id=""></select></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          `;
+          
+          div.appendChild(template);
+        }    
+        var deleteRow = () => {
+          console.log(i);
+          const padre = document.querySelector("#datos-tabla");
+          const hijo = document.querySelector(`.row${i}`);
+          
+          padre.removeChild(hijo);
+          i--;
+      }
+      </script>
   </body>
 </html>

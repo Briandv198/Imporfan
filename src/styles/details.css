@@ -98,8 +98,50 @@
   overflow-y: scroll;
   height: 250px;
 }
+.container .container-buttons-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .container-buttons-table .contenedor-botones {
+  margin-block-start: 40px;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .container-buttons-table .contenedor-botones .boton-mas {
+  width: 40px;
+  height: 40px;
+  background-image: url('../assets/BotonMas.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1,1);
+  transition: transform 0.4s;
+}
+.container .container-buttons-table .contenedor-botones .boton-mas:hover {
+  transform: scale(1.1,1.1);
+  cursor: pointer;
+}
+.container .container-buttons-table .contenedor-botones .boton-menos {
+  margin-inline-start: 20px;
+  width: 40px;
+  height: 40px;
+  background-image: url('../assets/BotonMenos.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1,1);
+  transition: transform 0.4s;
+}
+.container .container-buttons-table .contenedor-botones .boton-menos:hover {
+  transform: scale(1.1,1.1);
+  cursor: pointer;
+}
 .container .button-container {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: flex-end;
   align-items: center;

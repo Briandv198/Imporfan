@@ -63,4 +63,7 @@
     align-items: center;
     text-align: center;
   }
+  .container .container-buttons-table .contenedor-botones {
+    justify-content: center;
+  }
 }
