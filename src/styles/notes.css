@@ -52,16 +52,11 @@
   justify-content: center;
   align-items: center;
 }
-.container .container-buttons-table .contenedor-botones {
-  margin-block-start: 40px;
-  width: 90%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.container .container-buttons-table .contenedor-botones .boton-mas {
-  width: 40px;
-  height: 40px;
+.container .container-buttons-table .boton-mas {
+  margin-inline-end: 20px;
+  margin-inline-start: 10px;
+  width: 30px;
+  height: 30px;
   background-image: url('../assets/BotonMas.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -69,14 +64,15 @@
   transform: scale(1,1);
   transition: transform 0.4s;
 }
-.container .container-buttons-table .contenedor-botones .boton-mas:hover {
+.container .container-buttons-table .boton-mas:hover {
   transform: scale(1.1,1.1);
   cursor: pointer;
 }
-.container .container-buttons-table .contenedor-botones .boton-menos {
-  margin-inline-start: 20px;
-  width: 40px;
-  height: 40px;
+.container .container-buttons-table .boton-menos {
+  margin-inline-end: 20px;
+  margin-inline-start: 10px;
+  width: 30px;
+  height: 30px;
   background-image: url('../assets/BotonMenos.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -84,7 +80,7 @@
   transform: scale(1,1);
   transition: transform 0.4s;
 }
-.container .container-buttons-table .contenedor-botones .boton-menos:hover {
+.container .container-buttons-table .boton-menos:hover {
   transform: scale(1.1,1.1);
   cursor: pointer;
 }

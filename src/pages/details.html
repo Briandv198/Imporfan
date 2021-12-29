@@ -49,11 +49,11 @@
             <label for="buscarCliente">
               Buscar Cliente:
               <input
-              name="buscarCliente"
-              type="text"
-              id="busca_Cliente"
-              placeholder="Cliente"
-            />
+                name="buscarCliente"
+                type="text"
+                id="busca_Cliente"
+                placeholder="Cliente"
+              />
             </label>
           </form>
           <div class="cliente-busqueda">
@@ -61,10 +61,10 @@
             <label for="nombreCliente">
               Cliente:
               <select
-              name="nombreCliente"
-              id="Clientes"
-              onchange="buscarDato(value)"
-            ></select>
+                name="nombreCliente"
+                id="Clientes"
+                onchange="buscarDato(value)"
+              ></select>
             </label>
 
             <div class="datos-cliente">
@@ -85,15 +85,14 @@
             </div>
           </div>
         </div>
-        <div class="container-buttons-table">          
-          <div class="contenedor-botones">
-            <div class="boton-mas" onclick="addRow()"></div>
-            <div class="boton-menos" onclick="deleteRow()"></div>
-          </div>
+        <div class="container-buttons-table">
           <div class="table-container">
             <table class="table">
               <thead>
                 <tr>
+                  <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                    <div class="boton-mas" onclick="addRow()"></div>
+                  </th>
                   <th class="border-top-left">
                     <input type="search" readonly value="Busca" />
                   </th>
@@ -108,7 +107,10 @@
                 </tr>
               </thead>
               <tbody id="datos-tabla">
-                <tr>
+                <tr class="row0">
+                  <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                    <div class="boton-menos" onclick="deleteRow(0)"></div>
+                  </td>
                   <td><input type="text" /></td>
                   <td><select name="" id=""></select></td>
                   <td><input type="text" /></td>
@@ -120,17 +122,17 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <td class="opacity-0" colspan="5"></td>
+                  <td class="opacity-0" colspan="6"></td>
                   <td class="little-font">Subtotal</td>
                   <td class="border-top"><input type="text" /></td>
                 </tr>
                 <tr>
-                  <td class="opacity-0" colspan="5"></td>
+                  <td class="opacity-0" colspan="6"></td>
                   <td class="little-font">Iva</td>
                   <td class="border-top"><input type="text" /></td>
                 </tr>
                 <tr>
-                  <td class="border-bottom-left opacity-0" colspan="5"></td>
+                  <td class="border-bottom-left opacity-0" colspan="6"></td>
                   <td class="little-font">Total</td>
                   <td class="border-top"><input type="text" /></td>
                 </tr>
@@ -138,29 +140,32 @@
             </table>
           </div>
         </div>
-          <div class="button-container">
-            <div class="button primary-button">
-              <input type="submit" value="Enviar" />
-            </div>
-            <div class="button secondary-button">
-              <a href="javascript:window.print()" class="">Imprimir</a>
-            </div>
-            <div class="button secondary-button">
-              <a href="./notes.html" class="">Regresar</a>
-            </div>
+        <div class="button-container">
+          <div class="button primary-button">
+            <input type="submit" value="Enviar" />
           </div>
+          <div class="button secondary-button">
+            <a href="javascript:window.print()" class="">Imprimir</a>
+          </div>
+          <div class="button secondary-button">
+            <a href="./notes.html" class="">Regresar</a>
+          </div>
+        </div>
       </form>
     </main>
 
     <script>
+      i++;
       var i = 0;
       var addRow = () => {
-        i++;
         console.log(i);
-        const div = document.querySelector("#datos-tabla")
+        const div = document.querySelector("#datos-tabla");
         const template = document.createElement("tr");
         template.className = `row${i}`;
-        template.innerHTML =`
+        template.innerHTML = `
+        <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+          <div class="boton-menos" onclick="deleteRow(${i})"></div>
+          </td>      
           <td><input type="text" /></td>
           <td><select name="" id=""></select></td>
           <td><input type="text" /></td>
@@ -169,17 +174,16 @@
           <td><input type="text" /></td>
           <td><input type="text" /></td>
           `;
-          
-          div.appendChild(template);
-        }    
-        var deleteRow = () => {
-          console.log(i);
-          const padre = document.querySelector("#datos-tabla");
-          const hijo = document.querySelector(`.row${i}`);
-          
-          padre.removeChild(hijo);
-          i--;
-      }
-      </script>
+
+        div.appendChild(template);
+      };
+      var deleteRow = (i) => {
+        console.log(i);
+        const padre = document.querySelector("#datos-tabla");
+        const hijo = document.querySelector(`.row${i}`);
+
+        padre.removeChild(hijo);
+      };
+    </script>
   </body>
 </html>

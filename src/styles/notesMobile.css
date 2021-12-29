@@ -46,8 +46,4 @@
   .container .table-container::-webkit-scrollbar:vertical {
     width: 6px;
   }
-  
-  .container .container-buttons-table .contenedor-botones {
-    justify-content: center;
-  }
 }

@@ -38,14 +38,13 @@
         </div>
 
         <div class="container-buttons-table">
-          <div class="contenedor-botones">
-            <div class="boton-mas" onclick="addRow()"></div>
-            <div class="boton-menos" onclick="deleteRow()"></div>
-          </div>
           <div class="table-container">
             <table class="table">
               <thead>
                 <tr>
+                  <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                    <div class="boton-mas" onclick="addRow()"></div>
+                  </th>
                   <th class="border-top-left">
                     <input type="text" readonly value="Nota" />
                   </th>
@@ -58,7 +57,10 @@
                 </tr>
               </thead>
               <tbody id="datos-tabla">
-                <tr>
+                <tr class="row0">
+                  <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                    <div class="boton-menos" onclick="deleteRow(0)"></div>
+                  </td>
                   <td><input type="text" /></td>
                   <td><input type="text" /></td>
                   <td><input type="text" /></td>
@@ -82,32 +84,35 @@
         </div>
       </form>
     </main>
+
     <script>
+      i++;
       var i = 0;
       var addRow = () => {
-        i++;
         console.log(i);
-        const div = document.querySelector("#datos-tabla");
+        const div = document.querySelector("#datos-tabla")
         const template = document.createElement("tr");
         template.className = `row${i}`;
-        template.innerHTML = `
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+        template.innerHTML =`
+        <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+          <div class="boton-menos" onclick="deleteRow(${i})"></div>
+          </td>      
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
           `;
-
-        div.appendChild(template);
-      };
-      var deleteRow = () => {
-        console.log(i);
-        const padre = document.querySelector("#datos-tabla");
-        const hijo = document.querySelector(`.row${i}`);
-
-        padre.removeChild(hijo);
-        i--;
-      };
-    </script>
+          
+          div.appendChild(template);
+        }    
+        var deleteRow = (i) => {
+          console.log(i);
+          const padre = document.querySelector("#datos-tabla");
+          const hijo = document.querySelector(`.row${i}`);
+          
+          padre.removeChild(hijo);
+      }
+      </script>
   </body>
 </html>
