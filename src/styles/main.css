@@ -218,6 +218,9 @@ h1 {
   font-weight: lighter;
   border:  1px rgba(224, 91, 48, .2) solid;
 }
+.container .table-container table td select {
+  height: 38px;
+}
 .container .table-container table td,
 th {
   border-radius: 5px;
