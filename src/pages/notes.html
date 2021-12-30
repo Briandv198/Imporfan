@@ -78,5 +78,22 @@
         </div>
       </form>
     </main>
+    <script>
+      setTimeout(() => {
+        var container = document.querySelector("main");
+        var styles = document.createElement("style");
+        styles.innerHTML = `
+            .container {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+            .container form {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+          `;
+        container.appendChild(styles);
+      }, 300);
+    </script>
   </body>
 </html>

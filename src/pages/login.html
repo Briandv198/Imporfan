@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/login.css" />
     <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/loginMobile.css">
+    <link rel="stylesheet" href="../styles/loginMobile.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles/loginMobile.css">
+    <link rel="stylesheet" href="../styles/loginMobile.css" />
     <title>Login</title>
   </head>
   <body>
     <main class="container">
-
       <div class="image">
         <img src="../assets/logo.png" alt="Logo" />
       </div>
@@ -28,7 +27,6 @@
       </div>
 
       <form action="./notes.html">
-
         <label for="user" class="label-container">
           <p>Usuario</p>
           <input type="text" id="user" placeholder="Escribe aqui..." />
@@ -42,12 +40,44 @@
         <div class="button primary-button">
           <input type="submit" value="Enviar" />
         </div>
-
       </form>
-      <p>
+      <p class="p">
         El usuario accederá al sistema con la misma clave que utiliza para el
         SAE
       </p>
     </main>
+    <script>
+      setTimeout(() => {
+        var container = document.querySelector("main");
+        var styles = document.createElement("style");
+        styles.innerHTML = `
+            .container {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+            .container .text-container {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+            .container .image {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+            .container form {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+            .button {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+            .container .p {
+              opacity: 100%;
+              transform: translatey(0);
+            }
+          `;
+        container.appendChild(styles);
+      }, 300);
+    </script>
   </body>
 </html>

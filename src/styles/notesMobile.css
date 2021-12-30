@@ -20,11 +20,12 @@
     justify-content: center;
   }
   .container .table-container {
-    padding-block: 25px;
+    width: 85%;
+    padding: 25px;
     display: block;
     align-items: center;
     overflow: scroll;
-    width: 300px;
+    /* width: 300px; */
     height: 250px;
     text-align: right;
   }
