@@ -113,7 +113,12 @@
                   <td><input type="text" /></td>
                   <td><input type="text" /></td>
                   <td><input id="cantidad0" type="text" /></td>
-                  <td><input id="precio0" type="text" /></td>
+                  <td>
+                    <div style="position: relative">
+                      <input id="precio0" type="text" />
+                      <div class="boton-mas-precio" onclick="addRow()"></div>
+                    </div>
+                  </td>
                   <td><input id="total0" type="text" /></td>
                   <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
                     <div class="boton-menos" onclick="deleteRow(0)"></div>
@@ -168,7 +173,12 @@
         <td><input type="text" /></td>
         <td><input type="text" /></td>
         <td><input id="cantidad${i}" type="text" /></td>
-        <td><input id="precio${i}" type="text" /></td>
+        <td>
+          <div style="position: relative">
+            <input id="precio0" type="text" />
+            <div class="boton-mas-precio" onclick="addRow()"></div>
+          </div>
+        </td>
         <td><input id="total${i}" type="text" /></td>
         <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
           <div class="boton-menos" onclick="deleteRow(${i})"></div>

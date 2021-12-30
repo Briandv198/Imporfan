@@ -113,10 +113,10 @@
   align-items: center;
 }
 .container .container-buttons-table .boton-mas {
-  margin-inline-end: 10px;
-  margin-inline-start: 20px;
-  width: 30px;
-  height: 30px;
+  margin-inline: 15px;
+  padding: 16px;
+  width: 5px;
+  height: 5px;
   background-image: url('../assets/BotonMas.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -129,19 +129,39 @@
   cursor: pointer;
 }
 .container .container-buttons-table .boton-menos {
-  margin-inline-end: 10px;
-  margin-inline-start: 20px;
-  width: 30px;
-  height: 30px;
+  margin-inline: 15px;
+  padding: 16px;
+  width: 5px;
+  height: 5px;
   background-image: url('../assets/BotonMenos.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   transform: scale(1,1);
   transition: transform 0.4s;
 }
 .container .container-buttons-table .boton-menos:hover {
-  transform: scale(1.1,1.1);
+  transform: scale(1.2,1.2);
+  cursor: pointer;
+}
+.container .container-buttons-table .boton-mas-precio {
+  /* display: none; */
+  top: 100%;
+  left: calc(50% - 2px);
+  position: absolute;
+  padding: 4px;
+  width: 4px;
+  height: 4px;
+  background-image: url('../assets/BotonMas1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(1, 1, 1, 0);
+  transform: scale(1,1);
+  transition: transform 0.5s;
+}
+.container .container-buttons-table .boton-mas-precio:hover {
+  transform: scale(3.5,3.5);
   cursor: pointer;
 }
 .container .button-container {
