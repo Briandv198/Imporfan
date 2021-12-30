@@ -115,7 +115,7 @@
                   <td><input id="cantidad0" type="text" /></td>
                   <td>
                     <div style="position: relative">
-                      <input id="precio0" type="text" />
+                      <input id="precio0" type="text" onkeypress="addRowKey()" />
                       <div class="boton-mas-precio" onclick="addRow()"></div>
                     </div>
                   </td>
@@ -161,6 +161,18 @@
 
     <script>
       var i = 0;
+
+      var addRowKey = () => {
+        var evento = document.querySelector(`#precio${i}`);
+        evento.addEventListener("keyup", (e) => {
+          var keycode = e.keyCode || e.whitch;
+          if (keycode == 13) {
+            console.log("Huevos");
+            addRow();
+          }
+        });
+      }
+
       var addRow = () => {
         i++;
         console.log(i);
@@ -175,7 +187,7 @@
         <td><input id="cantidad${i}" type="text" /></td>
         <td>
           <div style="position: relative">
-            <input id="precio0" type="text" />
+            <input id="precio${i}" type="text" onkeypress="addRowKey()" />
             <div class="boton-mas-precio" onclick="addRow()"></div>
           </div>
         </td>
@@ -195,11 +207,11 @@
         padre.removeChild(hijo);
       };
     </script>
-        <script>
-          setTimeout(() => {
-            var container = document.querySelector("main");
-            var styles = document.createElement("style");
-            styles.innerHTML = `
+    <script>
+      setTimeout(() => {
+        var container = document.querySelector("main");
+        var styles = document.createElement("style");
+        styles.innerHTML = `
                 .container {
                   opacity: 100%;
                   transform: translatey(0);
@@ -213,8 +225,8 @@
                   transform: translatey(0);
                 }
               `;
-            container.appendChild(styles);
-          }, 300);
-        </script>
+        container.appendChild(styles);
+      }, 300);
+    </script>
   </body>
 </html>
