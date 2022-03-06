@@ -14,151 +14,160 @@
     <title>Notes</title>
   </head>
   <body>
-    <main class="container">
-      <div class="header-container">
-        <h1>Detalle de nota de venta</h1>
-        <div class="image">
-          <img src="../assets/logo.png" alt="Logo" />
-        </div>
-      </div>
-      <form action="./details.html">
-        <div class="input-container">
-          <label for="user" class="label-container">
-            <p>Usuario</p>
-            <input type="text" id="user" placeholder="Escribe aqui..." />
-          </label>
-          <label for="market" class="label-container">
-            <p>Tienda</p>
-            <input type="text" id="market" placeholder="Escribe aqui..." />
-          </label>
-          <label for="date" class="label-container">
-            <p>Fecha</p>
-            <input type="text" id="date" placeholder="Escribe aqui..." />
-          </label>
-          <label for="nventa" class="label-container">
-            <p>No Venta</p>
-            <input type="text" id="nventa" placeholder="Escribe aqui..." />
-          </label>
-          <label for="client" class="label-container">
-            <p>Cliente</p>
-            <input type="text" id="client" placeholder="Escribe aqui..." />
-          </label>
-        </div>
-        <div class="cliente">
-          <form action="" method="">
-            <label for="buscarCliente">
-              Buscar Cliente:
-              <input
-                name="buscarCliente"
-                type="text"
-                id="busca_Cliente"
-                placeholder="Cliente"
-              />
-            </label>
-          </form>
-          <div class="cliente-busqueda">
-            <h3>Datos Cliente</h3>
-            <label for="nombreCliente">
-              Cliente:
-              <select
-                name="nombreCliente"
-                id="Clientes"
-                onchange="buscarDato(value)"
-              ></select>
-            </label>
+    <div class="container">
 
-            <div class="datos-cliente">
-              <!-- Datos Cliente -->
-              <table>
+      <header>
+          <h1>Detalle de nota de venta</h1>
+          <div class="image">
+            <img src="../assets/logo.png" alt="Logo" />
+          </div>
+      </header>
+  
+      <main>
+        <form action="./details.html">
+  
+          <!-- Primeros Inputs -->
+          <div class="input-container">
+            <label for="user" class="label-container">
+              <p>Usuario</p>
+              <input type="text" id="user" placeholder="Escribe aqui..." />
+            </label>
+            <label for="market" class="label-container">
+              <p>Tienda</p>
+              <input type="text" id="market" placeholder="Escribe aqui..." />
+            </label>
+            <label for="date" class="label-container">
+              <p>Fecha</p>
+              <input type="text" id="date" placeholder="Escribe aqui..." />
+            </label>
+            <label for="nventa" class="label-container">
+              <p>No Venta</p>
+              <input type="text" id="nventa" placeholder="Escribe aqui..." />
+            </label>
+          </div>
+  
+          <!-- Seccion cliente -->
+          <div class="cliente">
+            <h1></h1>
+            <div>
+              <input type="text">
+              <div></div>
+              <div></div>
+              <span></span>
+            </div>
+            <label for="">
+              <p></p>
+              <input type="text">
+            </label>
+            <label for="">
+              <p></p>
+              <input type="text">
+            </label>
+            <div>
+              <label for="">
+                <input type="text">
+                <p></p>
+              </label>
+              <label for="">
+                <input type="text">
+                <p></p>
+              </label>
+              <label for="">
+                <input type="text">
+                <p></p>
+              </label>
+              <label for="">
+                <input type="text">
+                <p></p>
+              </label>
+              <label for="">
+                <input type="text">
+                <p></p>
+              </label>
+              <label for="">
+                <input type="text">
+                <p></p>
+              </label>
+            </div>
+          </div>
+  
+          <!-- Tabla de datos -->
+          <div class="container-buttons-table">
+            <div class="table-container">
+              <table class="table">
                 <thead>
                   <tr>
-                    <td>RFC</td>
-                    <td>Dirección</td>
-                    <td>Teléfono</td>
-                    <td>Correo</td>
+                    <th class="border-top-left">
+                      <input type="search" readonly value="Busca" />
+                    </th>
+                    <th><input type="select" readonly value="Clave" /></th>
+                    <th><input type="text" readonly value="Descripcion" /></th>
+                    <th><input type="text" readonly value="Almacen" /></th>
+                    <th><input type="text" readonly value="Cantidad" /></th>
+                    <th><input type="text" readonly value="Precio" /></th>
+                    <th class="border-top-right">
+                      <input type="text" readonly value="Total" />
+                    </th>
+                    <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                      <div class="boton-mas" onclick="addRow()"></div>
+                    </th>
                   </tr>
                 </thead>
-                <tbody id="datos">
-                  <!-- LLENADO DE DATOS -->
+                <tbody id="datos-tabla">
+                  <tr class="row0">
+                    <td><input type="text" /></td>
+                    <td><select name="" id=""></select></td>
+                    <td><input type="text" /></td>
+                    <td><input type="text" /></td>
+                    <td><input id="cantidad0" type="text" /></td>
+                    <td>
+                      <div style="position: relative">
+                        <input id="precio0" type="text" onkeypress="addRowKey()" />
+                        <div class="boton-mas-precio" onclick="addRow()"></div>
+                      </div>
+                    </td>
+                    <td><input id="total0" type="text" /></td>
+                    <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                      <div class="boton-menos" onclick="deleteRow(0)"></div>
+                    </td>
+                  </tr>
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <td class="opacity-0" colspan="5"></td>
+                    <td class="little-font">Subtotal</td>
+                    <td class="border-top"><input type="text" /></td>
+                  </tr>
+                  <tr>
+                    <td class="opacity-0" colspan="5"></td>
+                    <td class="little-font">Iva</td>
+                    <td class="border-top"><input type="text" /></td>
+                  </tr>
+                  <tr>
+                    <td class="border-bottom-left opacity-0" colspan="5"></td>
+                    <td class="little-font">Total</td>
+                    <td class="border-top"><input type="text" /></td>
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </div>
-        </div>
-        <div class="container-buttons-table">
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th class="border-top-left">
-                    <input type="search" readonly value="Busca" />
-                  </th>
-                  <th><input type="select" readonly value="Clave" /></th>
-                  <th><input type="text" readonly value="Descripcion" /></th>
-                  <th><input type="text" readonly value="Almacen" /></th>
-                  <th><input type="text" readonly value="Cantidad" /></th>
-                  <th><input type="text" readonly value="Precio" /></th>
-                  <th class="border-top-right">
-                    <input type="text" readonly value="Total" />
-                  </th>
-                  <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
-                    <div class="boton-mas" onclick="addRow()"></div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody id="datos-tabla">
-                <tr class="row0">
-                  <td><input type="text" /></td>
-                  <td><select name="" id=""></select></td>
-                  <td><input type="text" /></td>
-                  <td><input type="text" /></td>
-                  <td><input id="cantidad0" type="text" /></td>
-                  <td>
-                    <div style="position: relative">
-                      <input id="precio0" type="text" onkeypress="addRowKey()" />
-                      <div class="boton-mas-precio" onclick="addRow()"></div>
-                    </div>
-                  </td>
-                  <td><input id="total0" type="text" /></td>
-                  <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
-                    <div class="boton-menos" onclick="deleteRow(0)"></div>
-                  </td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td class="opacity-0" colspan="5"></td>
-                  <td class="little-font">Subtotal</td>
-                  <td class="border-top"><input type="text" /></td>
-                </tr>
-                <tr>
-                  <td class="opacity-0" colspan="5"></td>
-                  <td class="little-font">Iva</td>
-                  <td class="border-top"><input type="text" /></td>
-                </tr>
-                <tr>
-                  <td class="border-bottom-left opacity-0" colspan="5"></td>
-                  <td class="little-font">Total</td>
-                  <td class="border-top"><input type="text" /></td>
-                </tr>
-              </tfoot>
-            </table>
+          <div class="button-container">
+            <div class="button primary-button">
+              <input type="submit" value="Enviar" />
+            </div>
+            <div class="button secondary-button">
+              <a href="javascript:window.print()" class="">Imprimir</a>
+            </div>
+            <div class="button secondary-button">
+              <a href="./notes.html" class="">Regresar</a>
+            </div>
           </div>
-        </div>
-        <div class="button-container">
-          <div class="button primary-button">
-            <input type="submit" value="Enviar" />
-          </div>
-          <div class="button secondary-button">
-            <a href="javascript:window.print()" class="">Imprimir</a>
-          </div>
-          <div class="button secondary-button">
-            <a href="./notes.html" class="">Regresar</a>
-          </div>
-        </div>
-      </form>
-    </main>
+        </form>
+      </main>
+    </div>
 
+    <!-- Script de Animaciones -->
     <script>
       var i = 0;
 
