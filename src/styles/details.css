@@ -32,39 +32,135 @@
 }
 .container main {
   margin-block: 30px;
-  width: 90%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  opacity: 0;
-  transform: translateY(5%);
-  transition: transform 1s, opacity 1s;
-}
 .container main .input-container {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap-reverse;
 }
 .container .cliente {
-  width: 100%;
-  margin-block-start: 70px;
+  width: 90%;
+  margin-block-start: 50px;
+  padding-inline: 50px;
+  padding-block: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
+  font-size: 1.6rem;
+  color: var(--flame);
+  border-radius: 5px;
+  box-shadow: 0px 0px 9px rgba(22, 20, 12, 0.25);
+}
+.container .cliente .cliente--header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.container .cliente .cliente--header .cliente--header--edit {
+  padding: 16px;
+  width: 5px;
+  height: 5px;
+  background-image: url('../assets/Ellipse\ 8.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scale(1,1);
+  transition: transform 0.4s;
+}
+.container .cliente .cliente--header .cliente--header--edit:hover {
+  transform: scale(1.2,1.2);
+  cursor: pointer;
+}
+.container .cliente .cliente--header .cliente--header__left {
+  display: flex;
+  justify-content: flex-start;
+}
+.container .cliente .cliente--header .cliente--header__left > input {
+  margin-inline-end: 15px;
+  padding: 0 10px;
+  width: 300px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: lighter;
+  border-radius: 50px;
+  border: 0;
   box-shadow: 0px 0px 5px rgba(22, 20, 12, 0.25);
 }
-
-.container .table-container {
+.container .cliente .cliente--header .cliente--header__left .button-container {
+  width: auto;
+}
+.container .cliente .cliente--header .cliente--header__left .button-container .button{
+  height: 30px;
+  width: 80px;
+  margin-block: 0;
+  margin-inline-end: 15px;
+  margin-inline-start: 0;
+}
+.container .cliente .cliente--header .cliente--header__left .button-container .button:hover {
+  cursor: pointer;
+}
+.container .cliente .cliente--header .cliente--header__right {
+  display: flex;
+  flex-direction: column;
+}
+.container .cliente .cliente--header .cliente--header__right label {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .cliente .cliente--header .cliente--header__right label p {
+  margin-inline-end: 5px;
+}
+.container .cliente .cliente--header .cliente--header__right label select {
+  width: 150px;
+  height: 25px;
+  padding: 0 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: lighter;
+  outline: none;
+  border: 0;
+  border-radius: 50px;
+  background-color: var(--white);
+  box-shadow: 0px 0px 5px rgba(22, 20, 12, 0.25);
+}
+.container .cliente .cliente--main {
+  margin-block: 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container .cliente .cliente--main label {
+  margin-inline-end: 40px;
+  margin-block-start: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .cliente .cliente--main label p, .cliente--agregar__container p, .producto--agregar__container p {
+  margin-block-start: 10px;
+}
+.container .cliente .cliente--main label input, .cliente--agregar__container input, .producto--agregar__container input {
+  padding: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: lighter;
+  background-color: rgba(22, 20, 12, 0);
+  border: 0;
+  border-bottom: 1px rgba(224, 91, 48, .5) solid;
+}
+.container .container-buttons-table {
+  height: 500px;
+}
+.container .container-buttons-table .table-container {
   margin-block: 25px;
   padding-block: 25px;
   display: block;
@@ -74,12 +170,10 @@
   opacity: 0;
   transform: translateY(5%);
   transition: transform 1s, opacity 1s;
-}
-.container .container-buttons-table {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+} 
+.container .container-buttons-table .table-container .table {
+  width: 90%;
+  margin: 0 auto;
 }
 .container .container-buttons-table .contenedor-botones {
   margin-block-start: 40px;
@@ -142,6 +236,7 @@
 }
 .container .button-container {
   width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -167,4 +262,66 @@
 .container .table-container .opacity-0 {
   border: none;
   opacity: 0;
+}
+
+/* PupUps */
+.cliente--agregar, .producto--agregar {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s;
+}
+.cliente--agregar:target, .producto--agregar:target {
+  opacity: 1;
+  pointer-events: unset;
+}
+.cliente--agregar, .producto--agregar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .9);
+}
+.cliente--agregar__container, .producto--agregar__container {
+  width: 70%;
+  padding-block: 40px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--white);
+}
+.cliente--agregar__container h3, .producto--agregar__container h3 {
+  margin: 10px;
+  font-size: 2.8rem;
+  color: var(--flame);
+}
+.cliente--agregar__container p, .producto--agregar__container p {
+  font-size: 1.6rem;
+}
+.cliente--agregar__container label, .producto--agregar__container label {
+  margin: 10px;
+  padding-inline: 10px;
+}
+.cliente--agregar__container label input, .producto--agregar__container input {
+  outline: none;
+}
+.cliente--agregar__container .button-container, .producto--agregar__container .button-container {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+.cliente--agregar__container .button-container div, .producto--agregar__container .button-container div {
+  margin-inline: 10px;
+}
+.cliente--agregar__container .container--cliente, .cliente--agregar__container .container--entrega, .producto--agregar__container .container--cliente, .producto--agregar__container .container--entrega  {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }

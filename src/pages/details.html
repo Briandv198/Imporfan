@@ -14,6 +14,7 @@
     <title>Notes</title>
   </head>
   <body>
+    
     <div class="container">
 
       <header>
@@ -22,10 +23,9 @@
             <img src="../assets/logo.png" alt="Logo" />
           </div>
       </header>
-  
+
       <main>
-        <form action="./details.html">
-  
+
           <!-- Primeros Inputs -->
           <div class="input-container">
             <label for="user" class="label-container">
@@ -47,52 +47,70 @@
           </div>
   
           <!-- Seccion cliente -->
-          <div class="cliente">
-            <h1></h1>
-            <div>
-              <input type="text">
-              <div></div>
-              <div></div>
-              <span></span>
+          <form class="cliente">
+            <h1>Cliente</h1>
+            <div class="cliente--header">
+              <div class="cliente--header__left">
+                <input list="cliente--header__left--list" type="text">
+                <datalist id="cliente--header__left--list"></datalist>
+
+                <!-- Botones -->
+                <div class="button-container">
+                  <div class="button primary-button" >
+                    <input type="submit" value="Buscar">
+                  </div>
+                  <div class="button secondary-button" id="agregar">
+                    <a href="#idcliente">Agregar</a>
+                  </div>
+                  <a href="#idcliente">
+                    <div class="cliente--header--edit" id="editar"></div>
+                  </a>
+
+                  
+                </div>
+              </div>
+              <div class="cliente--header__right">
+                <label for="vendedor">
+                  <p>Vendedor:</p>
+                    <select id="vendedor"></select>
+                </label>
+                <label for="esquema">
+                  <p>Esquema:</p>
+                  <select id="esquema"></select>
+                </label>
+              </div>
             </div>
-            <label for="">
-              <p></p>
-              <input type="text">
-            </label>
-            <label for="">
-              <p></p>
-              <input type="text">
-            </label>
-            <div>
-              <label for="">
-                <input type="text">
-                <p></p>
+            <div class="cliente--main">
+              <label for="cliente--main__clave">
+                <input style="width: 130px;" type="text" id="cliente--main__clave" disabled="disabled">
+                <p>Clave</p>
               </label>
-              <label for="">
-                <input type="text">
-                <p></p>
+              <label for="cliente--main__nombre">
+                <input style="width: 300px;" type="text" id="cliente--main__nombre" disabled="disabled">
+                <p>Nombre</p>
               </label>
-              <label for="">
-                <input type="text">
-                <p></p>
+              <label for="cliente--main__rfc">
+                <input style="width: 200px;" type="text" id="cliente--main__rfc" disabled="disabled">
+                <p>RFC</p>
               </label>
-              <label for="">
-                <input type="text">
-                <p></p>
+              <label for="cliente--main__domfiscal">
+                <input style="width: 400px;" type="text" id="cliente--main__domfiscal" disabled="disabled">
+                <p>Domicilio Fiscal</p>
               </label>
-              <label for="">
-                <input type="text">
-                <p></p>
+              <h3 style="width: 100%; margin-block-start: 30px;">Datos de entrega</h3>
+              <label for="cliente--main__direntrega">
+                <input style="width: 400px;" type="text" id="cliente--main__direntrega" disabled="disabled">
+                <p>Direccion de entrega</p>
               </label>
-              <label for="">
-                <input type="text">
-                <p></p>
+              <label for="cliente--main__numcontacto">
+                <input style="width: 200px;" type="text" id="cliente--main__numcontacto" disabled="disabled">
+                <p>Numero de contacto</p>
               </label>
             </div>
-          </div>
+          </form>
   
           <!-- Tabla de datos -->
-          <div class="container-buttons-table">
+          <form class="container-buttons-table">
             <div class="table-container">
               <table class="table">
                 <thead>
@@ -115,7 +133,14 @@
                 </thead>
                 <tbody id="datos-tabla">
                   <tr class="row0">
-                    <td><input type="text" /></td>
+                    <td>
+                      <div style="position: relative;">
+                        <a href="#idproducto">
+                          <span class="search" style="position: absolute; right: 0; top: 0; bottom: 0; margin-inline-end: 5px;"></span>
+                        </a>
+                        <input type="text" style="padding-inline-end: 40px;" />
+                      </div>
+                    </td>
                     <td><select name="" id=""></select></td>
                     <td><input type="text" /></td>
                     <td><input type="text" /></td>
@@ -151,23 +176,162 @@
                 </tfoot>
               </table>
             </div>
-          </div>
-          <div class="button-container">
-            <div class="button primary-button">
-              <input type="submit" value="Enviar" />
+            
+            <!-- Botones de envio -->
+            <div class="button-container">
+              <div class="button primary-button">
+                <input type="submit" value="Enviar" />
+              </div>
+              <div class="button secondary-button">
+                <a href="javascript:window.print()" class="">Imprimir</a>
+              </div>
+              <div class="button secondary-button">
+                <a href="./notes.html" class="">Regresar</a>
+              </div>
             </div>
-            <div class="button secondary-button">
-              <a href="javascript:window.print()" class="">Imprimir</a>
-            </div>
-            <div class="button secondary-button">
-              <a href="./notes.html" class="">Regresar</a>
-            </div>
-          </div>
-        </form>
+          </form>
       </main>
     </div>
 
-    <!-- Script de Animaciones -->
+    <!-- Modal - Agregar/Editar -->
+    <div class="cliente--agregar" id="idcliente">
+      <div class="cliente--agregar__container">
+        <h3>Cliente</h3>
+        <div class="container--cliente">
+          <label for="">
+            <input style="width: 130px;" id="" type="number">
+            <p>Clave</p>
+          </label>
+          <label for="">
+            <input style="width: 300px;" id="" type="text">
+            <p>Nombre</p>
+          </label>
+          <label for="">
+            <input style="width: 200px;" id="" type="text">
+            <p>RFC</p>
+          </label>
+          <label for="">
+            <input style="width: 400px;" id="" type="text">
+            <p>Calle</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Num. ext</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Num. int</p>
+          </label>
+          <label for="">
+            <input style="width: 200px;" id="" type="text">
+            <p>Colonia</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Codigo postal(CP)</p>
+          </label>
+          <label for="">
+            <input style="width: 300px;" id="" type="text">
+            <p>Poblacion</p>
+          </label>
+        </div>
+        <h3>Datos de Entrega</h3>
+        <div class="container--entrega">
+          <label for="">
+            <input style="width: 400px;" id="" type="text">
+            <p>Calle</p>
+          </label>
+          <label for="">
+            <input style="width: 400px;" id="" type="text">
+            <p>Entre que calles</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Num. ext</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Num. int</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Codigo Postal (CP)</p>
+          </label>
+          <label for="">
+            <input style="width: 200px;" id="" type="text">
+            <p>Estado</p>
+          </label>
+          <label for="">
+            <input style="width: 200px" id="" type="text">
+            <p>Municipio</p>
+          </label>
+          <label for="">
+            <input style="width: 200px;" id="" type="text">
+            <p>Pais</p>
+          </label>
+          <label for="">
+            <input style="width: 200px;" id="" type="text">
+            <p>Colonia</p>
+          </label>
+          <label for="">
+            <input style="width: 300px;" id="" type="text">
+            <p>Referencia</p>
+          </label>
+          <!-- Boton de envio y cancelar -->
+        </div>
+        <div class="button-container">
+          <div class="button primary-button">
+            <a href="#main">Guardar</a>
+          </div>
+          <div class="button secondary-button">
+            <a href="#main" class="">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal - Producto -->
+    <div class="producto--agregar" id="idproducto">
+      <div class="producto--agregar__container">
+        <h3>Producto</h3>
+        <div class="container--cliente">
+          <label for="">
+            <input style="width: 130px;" id="" type="number">
+            <p>Clave</p>
+          </label>
+          <label for="">
+            <input style="width: 400px;" id="" type="text">
+            <p>Descripcion</p>
+          </label>
+          <label for="">
+            <input style="width: 300px;" id="" type="text">
+            <p>Almacen Seleccionado</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="text">
+            <p>cantidad</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Precio</p>
+          </label>
+          <label for="">
+            <input style="width: 100px;" id="" type="number">
+            <p>Total</p>
+          </label>
+        </div>
+        <!-- Boton de envio y cancelar -->
+        <div class="button-container">
+          <div class="button primary-button">
+            <a href="#main">Guardar</a>
+          </div>
+          <div class="button secondary-button">
+            <a href="#main">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Script de adicion -->
     <script>
       var i = 0;
 
@@ -184,7 +348,6 @@
 
       var addRow = () => {
         i++;
-        console.log(i);
         const div = document.querySelector("#datos-tabla");
         const template = document.createElement("tr");
         template.className = `row${i}`;
@@ -209,13 +372,13 @@
         div.appendChild(template);
       };
       var deleteRow = (i) => {
-        console.log(i);
         const padre = document.querySelector("#datos-tabla");
         const hijo = document.querySelector(`.row${i}`);
-
         padre.removeChild(hijo);
       };
     </script>
+    
+    <!-- Script de Animaciones -->
     <script>
       setTimeout(() => {
         var container = document.querySelector("main");
@@ -229,13 +392,29 @@
                   opacity: 100%;
                   transform: translatey(0);
                 }
-                .container .table-container {
+                .container .container-buttons-table .table-container {
                   opacity: 100%;
                   transform: translatey(0);
                 }
               `;
         container.appendChild(styles);
       }, 300);
+    </script>
+
+    <!-- PopUp - Clientes -->
+    <script>
+      const editar = document.getElementById("editar");
+      const agregar = document.getElementById("agregar")
+      
+      // Editar
+      editar.addEventListener("click", () => {
+        console.log("editar")
+      });
+
+      // Agregar
+      agregar.addEventListener("click", () => {
+        console.log("agregar")
+      });
     </script>
   </body>
 </html>
