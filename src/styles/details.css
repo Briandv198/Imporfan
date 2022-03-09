@@ -31,7 +31,7 @@
   width: 90%;
 }
 .container main {
-  margin-block: 30px;
+  margin-block: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +46,7 @@
 }
 .container .cliente {
   width: 90%;
-  margin-block-start: 50px;
+  margin-block-start: 25px;
   padding-inline: 50px;
   padding-block: 20px;
   display: flex;
@@ -134,7 +134,7 @@
   box-shadow: 0px 0px 5px rgba(22, 20, 12, 0.25);
 }
 .container .cliente .cliente--main {
-  margin-block: 25px;
+  margin-block: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -159,20 +159,43 @@
   border: 0;
   border-bottom: 1px rgba(224, 91, 48, .5) solid;
 }
-.container .container-buttons-table {
-  height: 500px;
-}
 .container .container-buttons-table .table-container {
   margin-block: 25px;
   padding-block: 25px;
   display: block;
   align-items: center;
   overflow-y: scroll;
-  height: 250px;
+  height: 350px;
   opacity: 0;
   transform: translateY(5%);
   transition: transform 1s, opacity 1s;
 } 
+.container .container-buttons-table .metodo-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+.container .container-buttons-table .metodo-container div label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .container-buttons-table .metodo-container div label p {
+  margin-inline-end: 10px;
+  font-size: 1.6rem;
+  color: var(--flame);
+}
+.container .container-buttons-table .metodo-container div label select {
+  width: 150px;
+  height: 25px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px rgb(22 20 12 / 25%);
+
+}
 .container .container-buttons-table .table-container .table {
   width: 90%;
   margin: 0 auto;
