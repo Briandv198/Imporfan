@@ -115,9 +115,6 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th class="border-top-left">
-                      <input type="search" readonly value="Busca" />
-                    </th>
                     <th><input type="select" readonly value="Clave" /></th>
                     <th><input type="text" readonly value="Descripcion" /></th>
                     <th><input type="text" readonly value="Almacen" /></th>
@@ -127,7 +124,9 @@
                       <input type="text" readonly value="Total" />
                     </th>
                     <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
-                      <div class="boton-mas" onclick="addRow()"></div>
+                      <a href="#idproducto">
+                        <div class="boton-mas" onclick="addRow()"></div>
+                      </a>
                     </th>
                   </tr>
                 </thead>
@@ -136,22 +135,23 @@
                     <td>
                       <div style="position: relative;">
                         <a href="#idproducto">
-                          <span class="search" style="position: absolute; right: 0; top: 0; bottom: 0; margin-inline-end: 5px;"></span>
+                          <span id="aux0" class="search" style="position: absolute; right: 0; top: 0; bottom: 0; margin-inline-end: 5px; font-size: 0rem;">0</span>
                         </a>
-                        <input type="text" style="padding-inline-end: 40px;" />
+                        <input readonly id="clave0" type="text" style="padding-inline-end: 40px;" />
                       </div>
                     </td>
-                    <td><select name="" id=""></select></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input id="cantidad0" type="text" /></td>
+                    <td><input readonly id="desc0" type="text" /></td>
+                    <td><input readonly id="alma0" type="text" /></td>
+                    <td><input readonly id="cantidad0" type="text" /></td>
                     <td>
                       <div style="position: relative">
-                        <input id="precio0" type="text" onkeypress="addRowKey()" />
-                        <div class="boton-mas-precio" onclick="addRow()"></div>
+                        <a href="#idproducto">
+                          <input readonly id="precio0" type="text" onkeypress="addRowKey()" />
+                          <div class="boton-mas-precio" onclick="addRow()"></div>
+                        </a>
                       </div>
                     </td>
-                    <td><input id="total0" type="text" /></td>
+                    <td><input readonly id="total0" type="text" /></td>
                     <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
                       <div class="boton-menos" onclick="deleteRow(0)"></div>
                     </td>
@@ -159,19 +159,19 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td class="opacity-0" colspan="5"></td>
+                    <td class="opacity-0" colspan="4"></td>
                     <td class="little-font">Subtotal</td>
-                    <td class="border-top"><input type="text" /></td>
+                    <td class="border-top"><input readonly type="text" /></td>
                   </tr>
                   <tr>
-                    <td class="opacity-0" colspan="5"></td>
+                    <td class="opacity-0" colspan="4"></td>
                     <td class="little-font">Iva</td>
-                    <td class="border-top"><input type="text" /></td>
+                    <td class="border-top"><input readonly type="text" /></td>
                   </tr>
                   <tr>
-                    <td class="border-bottom-left opacity-0" colspan="5"></td>
+                    <td class="border-bottom-left opacity-0" colspan="4"></td>
                     <td class="little-font">Total</td>
-                    <td class="border-top"><input type="text" /></td>
+                    <td class="border-top"><input readonly type="text" /></td>
                   </tr>
                 </tfoot>
               </table>
@@ -296,34 +296,34 @@
         <h3>Producto</h3>
         <div class="container--cliente">
           <label for="">
-            <input style="width: 130px;" id="" type="number">
+            <input style="width: 130px;" id="idpclave" type="number">
             <p>Clave</p>
           </label>
           <label for="">
-            <input style="width: 400px;" id="" type="text">
+            <input style="width: 400px;" id="idpdescripcion" type="text">
             <p>Descripcion</p>
           </label>
           <label for="">
-            <input style="width: 300px;" id="" type="text">
+            <input style="width: 300px;" id="idpalma" type="text">
             <p>Almacen Seleccionado</p>
           </label>
           <label for="">
-            <input style="width: 100px;" id="" type="text">
+            <input style="width: 100px;" id="idpcantidad" type="number">
             <p>cantidad</p>
           </label>
           <label for="">
-            <input style="width: 100px;" id="" type="number">
+            <input style="width: 100px;" id="idpprecio" type="number">
             <p>Precio</p>
           </label>
           <label for="">
-            <input style="width: 100px;" id="" type="number">
+            <input style="width: 100px;" id="idptotal" type="number">
             <p>Total</p>
           </label>
         </div>
         <!-- Boton de envio y cancelar -->
         <div class="button-container">
           <div class="button primary-button">
-            <a href="#main">Guardar</a>
+            <a href="#main" onclick="limpiarModalProducto()">Guardar</a>
           </div>
           <div class="button secondary-button">
             <a href="#main">Cancelar</a>
@@ -331,6 +331,53 @@
         </div>
       </div>
     </div>
+
+    <!-- Script de inputs -->
+    <script>
+      var idpClave = document.getElementById("idpclave");
+      var idpDescripcion = document.getElementById("idpdescripcion");
+      var idpAlma = document.getElementById("idpalma");
+      var idpCantidad = document.getElementById("idpcantidad");
+      var idpPrecio = document.getElementById("idpprecio");
+      var idpTotal = document.getElementById("idptotal");
+
+      // Sacamos el total
+      // document.getElementById("idptotal") = document.getElementById("idpcantidad").value * document.getElementById("idpprecio");
+
+      idpClave.addEventListener('keyup', (event) => {
+        document.getElementById(`clave${i}`).value = event.path[0].value;
+      })
+
+      idpDescripcion.addEventListener('keyup', (event) => {
+        document.getElementById(`desc${i}`).value = event.path[0].value;
+      })
+      
+      idpAlma.addEventListener('keyup', (event) => {
+        document.getElementById(`alma${i}`).value = event.path[0].value;
+      })
+      
+      idpCantidad.addEventListener('keyup', (event) => {
+        document.getElementById(`cantidad${i}`).value = event.path[0].value;
+      })
+      
+      idpPrecio.addEventListener('keyup', (event) => {
+        document.getElementById(`precio${i}`).value = event.path[0].value;
+      })
+      
+      idpTotal.addEventListener('keyup', (event) => {
+        document.getElementById(`total${i}`).value = event.path[0].value;
+      })
+      
+      var limpiarModalProducto = () => {
+        document.getElementById("idpclave").value = "";
+        document.getElementById("idpdescripcion").value = "";
+        document.getElementById("idpalma").value = "";
+        document.getElementById("idpcantidad").value = "";
+        document.getElementById("idpprecio").value = "";
+        document.getElementById("idptotal").value = "";
+      }
+      
+    </script>
     <!-- Script de adicion -->
     <script>
       var i = 0;
@@ -352,15 +399,23 @@
         const template = document.createElement("tr");
         template.className = `row${i}`;
         template.innerHTML = `
-        <td><input type="text" /></td>
-        <td><select name="" id=""></select></td>
-        <td><input type="text" /></td>
-        <td><input type="text" /></td>
+        <td>
+          <div style="position: relative;">
+              <a href="#idproducto">
+                <span class="search" style="position: absolute; right: 0; top: 0; bottom: 0; margin-inline-end: 5px;"></span>
+             </a>
+            <input id="clave${i}" type="text" style="padding-inline-end: 40px;" />
+          </div>
+        </td>
+        <td><input id="desc${i}" type="text" /></td>
+        <td><input id="alma${i}" type="text" /></td>
         <td><input id="cantidad${i}" type="text" /></td>
         <td>
           <div style="position: relative">
-            <input id="precio${i}" type="text" onkeypress="addRowKey()" />
-            <div class="boton-mas-precio" onclick="addRow()"></div>
+            <a href="#idproducto">
+              <input id="precio${i}" type="text" />
+              <div class="boton-mas-precio" onclick="addRow()"></div>
+            </a>
           </div>
         </td>
         <td><input id="total${i}" type="text" /></td>
