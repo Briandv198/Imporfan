@@ -285,15 +285,15 @@
                       <td class="opacity-0" colspan="4"></td>
                       <td class="little-font">Subtotal</td>
                       <td class="border-top">
-                        <input id="" name="" type="text" disabled="disabled" />
+                        <input id="idsubtotal" name="" type="number" disabled="disabled" value="0" />
                       </td>
                     </tr>
 
                     <tr>
                       <td class="opacity-0" colspan="4"></td>
-                      <td class="little-font">Iva</td>
+                      <td class="little-font">%</td>
                       <td class="border-top">
-                        <input id="" name="" type="text" disabled="disabled" />
+                        <input id="idiva" name="" type="number" disabled="disabled" value="0" />
                       </td>
                     </tr>
 
@@ -301,7 +301,7 @@
                       <td class="border-bottom-left opacity-0" colspan="4"></td>
                       <td class="little-font">Total</td>
                       <td class="border-top">
-                        <input id="" name="" type="text" disabled="disabled" />
+                        <input id="idtotal" name="" type="number" disabled="disabled" value="0" />
                       </td>
                     </tr>
 
@@ -487,7 +487,8 @@
             </label>
 
             <label for="">
-              <input style="width: 100px" id="idpprecio" type="number" name="precio" disabled="disabled" />
+              <!-- <input style="width: 100px" id="idpprecio" type="number" name="precio" disabled="disabled" /> -->
+              <input style="width: 100px" id="idpprecio" type="number" name="precio" />
               <p>Precio</p>
             </label>
 
@@ -583,6 +584,11 @@
 
       }
 
+      // Sacar total por producto
+      document.getElementById("idpcantidad").addEventListener("keyup", () => {
+        document.getElementById("idptotal").value = document.getElementById("idpcantidad").value * document.getElementById("idpprecio").value;
+      });
+
       var producto = () => {
 
         var idpClave = document.getElementById("idpclave").value;
@@ -592,9 +598,9 @@
         var idpCantidad = document.getElementById("idpcantidad").value;
         var idpPrecio = document.getElementById("idpprecio").value;
         var idpTotal = document.getElementById("idptotal").value;
-
+        
         if (idpClave != "" && idpCantidad != "") {
-
+          
           document.getElementById(`clave${i}`).value = idpClave;
           document.getElementById(`desc${i}`).value = idpDescripcion;
           document.getElementById(`alma${i}`).value = idpAlma;
@@ -602,11 +608,21 @@
           document.getElementById(`precio${i}`).value = idpPrecio;
           document.getElementById(`total${i}`).value = idpTotal;
           
+
           // Agregamos el tag al boton "Guardar"
           document.getElementById('idpguardar').setAttribute("href", "#main");
 
           // Limpiamos el modal
           limpiarModalProducto();
+
+
+
+          // ------------------------Aqui se suman los totales------------------------
+          // Agregamos valores a SubTotal
+          let subtotal = document.getElementById('idsubtotal');
+          subtotal.value = parseFloat(subtotal.value) + parseFloat(idpTotal);
+
+          calculosTotal(parseFloat(subtotal.value));
 
         } else {
           alert("Ingresa los datos requeridos (*)");
@@ -620,6 +636,19 @@
           }         
         }
 
+
+      }
+
+      var calculosTotal = (subtotal) => {
+                  
+          // Agregamos valores a Iva
+          let iva = document.getElementById('idiva');
+          // iva += document.getElementById("esquema").value * subtotal;
+          iva.value= parseFloat(0.16 * subtotal);
+          
+          // Agregamos valores a Total
+          let total = document.getElementById('idtotal');
+          total.value = parseFloat(subtotal - iva.value);
 
       }
 
@@ -718,6 +747,14 @@
       var deleteRow = (j) => {
         const padre = document.querySelector("#datos-tabla");
         const hijo = document.querySelector(`.row${j}`);
+
+        // ------------------------Aqui se restan los totales------------------------
+        let subtotal = document.getElementById('idsubtotal');
+        subtotal.value = parseFloat(subtotal.value) - parseFloat(document.getElementById(`total${j}`).value);
+
+        calculosTotal(parseFloat(subtotal.value));
+
+
         padre.removeChild(hijo);
       };
     </script>
