@@ -473,38 +473,38 @@
 
             <label for="">
               <input style="width: 130px" id="idpclave" type="text" name="clave" />
-              <p id="idprclave">* Clave</p>
+              <p id="idprclave">* Clave </p>
             </label>
 
             <label for="">
               <input style="width: 500px" id="idpdescripcion" type="text" name="descripcion" disabled="disabled" />
-              <p>Descripcion</p>
+              <p>Descripcion </p> 
             </label>
 
             <label for="">
               <input style="width: 400px" id="idpalma" type="text" name="alma" disabled="disabled" />
-              <p>Almacen Seleccionado</p>
+              <p>Almacen Seleccionado </p><span></span>
             </label>
 
             <label for="">
               <input style="width: 100px" id="idpexistencia" type="number" name="existencia" disabled="disabled" />
-              <p>Existencia</p>
+              <p>Existencia </p> 
             </label>
 
             <label for="">
               <input style="width: 100px" id="idpcantidad" type="number" name="cantidad" />
-              <p id="idprcantidad">* Cantidad</p>
+              <p id="idprcantidad">* Cantidad </p> 
             </label>
 
             <label for="">
               <!-- <input style="width: 100px" id="idpprecio" type="number" name="precio" disabled="disabled" /> -->
               <input style="width: 100px" id="idpprecio" type="number" name="precio" />
-              <p>Precio</p>
+              <p>Precio </p> 
             </label>
 
             <label for="">
               <input style="width: 100px" id="idptotal" type="number" name="total" disabled="disabled" />
-              <p>Total</p>
+              <p>Total</p> <span id="idptotalspan"></span>
             </label>
 
           </div>
@@ -695,6 +695,8 @@
         var editClave = document.getElementById(`clave${k}`).value;
         var editCantidad = document.getElementById(`cantidad${k}`).value;
 
+        document.getElementById("idptotalspan").textContent = "Anterior: " + document.getElementById(`total${k}`).value;
+
         idpClave.value = editClave;
         idpCantidad.value = editCantidad;
 
@@ -760,7 +762,7 @@
         const template = document.createElement("tr");
         template.className = `row${i}`;
         template.innerHTML = `
-        <td>
+                      <td>
                         <div style="position: relative">
                           <a href="#idproducto">
                             <span
