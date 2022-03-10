@@ -457,7 +457,7 @@
               <a href="#main" class="" onclick="valiEdit()">Cancelar</a>
             </div>
             <div class="button secondary-button">
-              <a onclick="limpiarModalProducto()">Limpiar</a>
+              <a onclick="limpiarModalCliente()">Limpiar</a>
             </div>
           </div>
         </div>
@@ -725,6 +725,29 @@
         document.getElementById("idpprecio").value = "";
         document.getElementById("idptotal").value = "";
       };
+
+      var limpiarModalCliente = () => {
+        document.getElementById("idcclave").value = "";
+        document.getElementById("idcnombre").value = "";
+        document.getElementById("idcrfc").value = "";
+        document.getElementById("idccalle").value = "";
+        document.getElementById("idcnumext").value = "";
+        document.getElementById("idcnumint").value = "";
+        document.getElementById("idccolonia").value = "";
+        document.getElementById("idccp").value = "";
+        document.getElementById("idcpoblacion").value = ""; 
+
+        document.getElementById("idcecalle").value = "";
+        document.getElementById("idceentre").value = "";
+        document.getElementById("idcenumext").value = "";
+        document.getElementById("idcenumint").value = "";
+        document.getElementById("idcecp").value = "";
+        document.getElementById("idceestado").value = "";
+        document.getElementById("idcemunicipio").value = "";
+        document.getElementById("idcepais").value = "";
+        document.getElementById("idcecolonia").value = "";
+        document.getElementById("idcereferencia").value = "";
+      }
     </script>
 
     <!-- Script - add|delete -->
