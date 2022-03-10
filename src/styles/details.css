@@ -159,6 +159,9 @@
   border: 0;
   border-bottom: 1px rgba(224, 91, 48, .5) solid;
 }
+.container .container-buttons-table {
+  width: 100%;
+}
 .container .container-buttons-table .table-container {
   margin-block: 25px;
   padding-block: 25px;

@@ -32,7 +32,7 @@
                 <p>Usuario</p>
                 <input id="user" name="" type="text" />
               </label>
-              
+
               <label for="market" class="label-container">
                 <p>Tienda</p>
                 <input id="market" name="" type="text" />
@@ -106,12 +106,12 @@
                     type="text"
                     style="width: 130px"
                     value=""
-                    
+
                     disabled="disabled"
                   />
                   <p>Clave</p>
                 </label>
-                
+
                 <label for="cmnombre">
                   <input
                     id="cmnombre"
@@ -208,8 +208,8 @@
                         <input type="text" disabled="disabled" value="Total" />
                       </th>
                       <th style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
-                        <a href="#idproducto">
-                          <div class="boton-mas" onclick="addRow()"></div>
+                        <a href="#idproducto" onclick="aux = 1">
+                          <div class="boton-mas"></div>
                         </a>
                       </th>
                     </tr>
@@ -232,7 +232,8 @@
                                 margin-inline-end: 5px;
                                 font-size: 0rem;
                               "
-                              >0</span
+                              onclick="edtarProducto(0)"
+                              ></span
                             >
                           </a>
                           <input
@@ -260,12 +261,10 @@
                             id="precio0"
                             name="precio0[cliente]"
                             type="text"
-                            onkeypress="addRowKey()"
-                            
                             disabled="disabled"
                           />
-                          <a href="#idproducto">
-                            <div class="boton-mas-precio" onclick="addRow()"></div>
+                          <a href="#idproducto" onclick="aux = 1" >
+                            <div class="boton-mas-precio"></div>
                           </a>
                         </div>
                       </td>
@@ -448,7 +447,7 @@
             </label>
 
           </div>
-          
+
           <!-- Boton de envio y cancelar -->
           <div class="button-container">
             <div class="button primary-button">
@@ -536,15 +535,15 @@
       var valiEdit = () => {
         // Edit - Activar|Desactivar
         if (auxClave.value == "") {
-  
+
           editar.style.opacity = .5;
-  
+
         } else {
 
           editar.style.opacity = 1;
           aeditar.setAttribute("href", "#idcliente");
         }
-        
+
       }
 
       agregar.addEventListener("click", () => {
@@ -554,6 +553,9 @@
 
     <!-- Script de inputs -->
     <script>
+      var aux = 1;
+      var k = 0;
+
       var agregaCliente = () => {
 
         var idcClave = document.getElementById("idcclave").value;
@@ -602,6 +604,7 @@
 
       var producto = () => {
 
+
         var idpClave = document.getElementById("idpclave").value;
         var idpDescripcion = document.getElementById("idpdescripcion").value;
         var idpAlma = document.getElementById("idpalma").value;
@@ -609,9 +612,18 @@
         var idpCantidad = document.getElementById("idpcantidad").value;
         var idpPrecio = document.getElementById("idpprecio").value;
         var idpTotal = document.getElementById("idptotal").value;
+
+        let subtotal = document.getElementById('idsubtotal');
         
         if (idpClave != "" && idpCantidad != "") {
-          
+
+          if (i > 0 && aux != 0) {
+            addRow();
+          }
+        // 1 = agregar - 0 = editar
+        if (aux == 1) {
+          console.log("Agregar");
+
           document.getElementById(`clave${i}`).value = idpClave;
           document.getElementById(`desc${i}`).value = idpDescripcion;
           document.getElementById(`alma${i}`).value = idpAlma;
@@ -619,21 +631,37 @@
           document.getElementById(`precio${i}`).value = idpPrecio;
           document.getElementById(`total${i}`).value = idpTotal;
           
+          // Se incrementa al indice
+          i++;
+        } else if (aux == 0) {
+          console.log("Editar");
 
-          // Agregamos el tag al boton "Guardar"
-          document.getElementById('idpguardar').setAttribute("href", "#main");
-
-          // Limpiamos el modal
-          limpiarModalProducto();
+          // Restamos el total del subtotal
+          subtotal.value = parseFloat(subtotal.value) - parseFloat(document.getElementById(`total${k}`).value);
 
 
+          document.getElementById(`clave${k}`).value = idpClave;
+          document.getElementById(`desc${k}`).value = idpDescripcion;
+          document.getElementById(`alma${k}`).value = idpAlma;
+          document.getElementById(`cantidad${k}`).value = idpCantidad;
+          document.getElementById(`precio${k}`).value = idpPrecio;
+          document.getElementById(`total${k}`).value = idpTotal;
 
-          // ------------------------Aqui se suman los totales------------------------
-          // Agregamos valores a SubTotal
-          let subtotal = document.getElementById('idsubtotal');
-          subtotal.value = parseFloat(subtotal.value) + parseFloat(idpTotal);
+        }
+        
+        // Agregamos el tag al boton "Guardar"
+        document.getElementById('idpguardar').setAttribute("href", "#main");
+        
+        // Limpiamos el modal
+        limpiarModalProducto();
+        
+        
+        // ------------------------Aqui se suman los totales------------------------
+        // Agregamos valores a SubTotal
+        subtotal.value = parseFloat(subtotal.value) + parseFloat(idpTotal);
+        calculosTotal(parseFloat(subtotal.value));
 
-          calculosTotal(parseFloat(subtotal.value));
+
 
         } else {
           alert("Ingresa los datos requeridos (*)");
@@ -644,19 +672,45 @@
 
           if (idpCantidad == "") {
             document.getElementById("idprcantidad").style.color = "#FF0000";
-          }         
-        }
+          }
+          if (i > 0) {
+            document.getElementById('idpguardar').removeAttribute("href");
+          }
 
+        }
 
       }
 
+      var edtarProducto = (ko) => {
+
+        k = ko;
+
+        if(i != 0){
+          aux = 0;
+        }
+
+        var idpClave = document.getElementById("idpclave");
+        var idpCantidad = document.getElementById("idpcantidad");
+
+        var editClave = document.getElementById(`clave${k}`).value;
+        var editCantidad = document.getElementById(`cantidad${k}`).value;
+
+        idpClave.value = editClave;
+        idpCantidad.value = editCantidad;
+
+        console.log(idpClave);
+        console.log(idpCantidad);
+        console.log(editClave);
+        console.log(editCantidad);
+      }
+
       var calculosTotal = (subtotal) => {
-                  
+
           // Agregamos valores a Iva
           let iva = document.getElementById('idiva');
-          // iva += document.getElementById("esquema").value * subtotal;
+          // iva += parseFloat(document.getElementById("esquema").value) * subtotal;
           iva.value= parseFloat(0.16 * subtotal);
-          
+
           // Agregamos valores a Total
           let total = document.getElementById('idtotal');
           total.value = parseFloat(subtotal - iva.value);
@@ -677,19 +731,8 @@
     <script>
       var i = 0;
 
-      var addRowKey = () => {
-        var evento = document.querySelector(`#precio${i}`);
-        evento.addEventListener("keyup", (e) => {
-          var keycode = e.keyCode || e.whitch;
-          if (keycode == 13) {
-            console.log("Huevos");
-            addRow();
-          }
-        });
-      };
-
       var addRow = () => {
-        i++;
+
         const div = document.querySelector("#datos-tabla");
         const template = document.createElement("tr");
         template.className = `row${i}`;
@@ -708,7 +751,8 @@
                                 margin-inline-end: 5px;
                                 font-size: 0rem;
                               "
-                              >0</span
+                              onclick="edtarProducto(${i})"
+                              ></span
                             >
                           </a>
                           <input
@@ -736,42 +780,41 @@
                             id="precio${i}"
                             name="precio${i}[cliente]"
                             type="text"
-                            onkeypress="addRowKey()"
                             
                             disabled="disabled"
-                          />
-                          <a href="#idproducto">
-                            <div class="boton-mas-precio" onclick="addRow()"></div>
-                          </a>
-                        </div>
+                            />
+                            <a href="#idproducto" onclick="aux = 1">
+                              <div class="boton-mas-precio"></div>
+                              </a>
+                              </div>
+                              </td>
+                              
+                              <td><input id="total${i}" name="total${i}[cliente]" type="text" disabled="disabled" /></td>
+                              
+                              <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
+                                <div class="boton-menos" onclick="deleteRow(${i})"></div>
                       </td>
+                      `;
 
-                      <td><input id="total${i}" name="total${i}[cliente]" type="text" disabled="disabled" /></td>
+                      div.appendChild(template);
+                    };
+                    var deleteRow = (j) => {
+                      const padre = document.querySelector("#datos-tabla");
+                      const hijo = document.querySelector(`.row${j}`);
+                      
+                      // ------------------------Aqui se restan los totales------------------------
+                      let subtotal = document.getElementById('idsubtotal');
+                      subtotal.value = parseFloat(subtotal.value) - parseFloat(document.getElementById(`total${j}`).value);
+                      
+                      calculosTotal(parseFloat(subtotal.value));
+                      
+                      
+                      padre.removeChild(hijo);
+                    };
+                    </script>
 
-                      <td style="box-shadow: 0px 0px 19px rgb(22 20 12 / 0)">
-                        <div class="boton-menos" onclick="deleteRow(${i})"></div>
-                      </td>
-          `;
-
-        div.appendChild(template);
-      };
-      var deleteRow = (j) => {
-        const padre = document.querySelector("#datos-tabla");
-        const hijo = document.querySelector(`.row${j}`);
-
-        // ------------------------Aqui se restan los totales------------------------
-        let subtotal = document.getElementById('idsubtotal');
-        subtotal.value = parseFloat(subtotal.value) - parseFloat(document.getElementById(`total${j}`).value);
-
-        calculosTotal(parseFloat(subtotal.value));
-
-
-        padre.removeChild(hijo);
-      };
-    </script>
-
-    <!-- Script de Animaciones -->
-    <script>
+<!-- Script de Animaciones -->
+<script>
       setTimeout(() => {
         var container = document.querySelector("main");
         var styles = document.createElement("style");
