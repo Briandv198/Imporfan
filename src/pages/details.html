@@ -74,7 +74,7 @@
                     </div>
 
                     <a id="aeditar" >
-                      <div class="cliente--header--edit" id="editar"></div>
+                      <div class="cliente--header--edit" id="editar" ></div>
                     </a>
 
                   </div>
@@ -546,9 +546,6 @@
 
       }
 
-      agregar.addEventListener("click", () => {
-        console.log("agregar");
-      });
     </script>
 
     <!-- Script de inputs -->
@@ -591,8 +588,13 @@
           // Agregamos el tag al boton "Guardar"
           document.getElementById('idcguardar').setAttribute("href", "#main");
 
-        } else {
+          // Limpiamos modal cuando se de en guardar
+          // limpiarModalCliente()
 
+        } else {
+          alert("No puedes guardar un cliente vacio");
+          // Quitamos el tag del boton guardar
+          document.getElementById('idcguardar').removeAttribute("href");
         }
 
       }
@@ -729,26 +731,26 @@
       };
 
       var limpiarModalCliente = () => {
-        document.getElementById("idcclave").value = "";
-        document.getElementById("idcnombre").value = "";
-        document.getElementById("idcrfc").value = "";
-        document.getElementById("idccalle").value = "";
-        document.getElementById("idcnumext").value = "";
-        document.getElementById("idcnumint").value = "";
-        document.getElementById("idccolonia").value = "";
-        document.getElementById("idccp").value = "";
-        document.getElementById("idcpoblacion").value = ""; 
+        document.getElementById("idcclave").value = null;
+        document.getElementById("idcnombre").value = null;
+        document.getElementById("idcrfc").value = null;
+        document.getElementById("idccalle").value = null;
+        document.getElementById("idcnumext").value = null;
+        document.getElementById("idcnumint").value = null;
+        document.getElementById("idccolonia").value = null;
+        document.getElementById("idccp").value = null;
+        document.getElementById("idcpoblacion").value = null; 
 
-        document.getElementById("idcecalle").value = "";
-        document.getElementById("idceentre").value = "";
-        document.getElementById("idcenumext").value = "";
-        document.getElementById("idcenumint").value = "";
-        document.getElementById("idcecp").value = "";
-        document.getElementById("idceestado").value = "";
-        document.getElementById("idcemunicipio").value = "";
-        document.getElementById("idcepais").value = "";
-        document.getElementById("idcecolonia").value = "";
-        document.getElementById("idcereferencia").value = "";
+        document.getElementById("idcecalle").value = null;
+        document.getElementById("idceentre").value = null;
+        document.getElementById("idcenumext").value = null;
+        document.getElementById("idcenumint").value = null;
+        document.getElementById("idcecp").value = null;
+        document.getElementById("idceestado").value = null;
+        document.getElementById("idcemunicipio").value = null;
+        document.getElementById("idcepais").value = null;
+        document.getElementById("idcecolonia").value = null;
+        document.getElementById("idcereferencia").value = null;
       }
     </script>
 
