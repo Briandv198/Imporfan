@@ -175,6 +175,18 @@
                   <p>Numero de contacto</p>
                 </label>
 
+                <label for="cmreferencia">
+                  <input
+                    id="cmreferencia"
+                    name=""
+                    type="text"
+                    style="width: 400px"
+
+                    disabled="disabled"
+                  />
+                  <p>Referencia</p>
+                </label>
+
               </div>
             </div>
 
@@ -446,6 +458,11 @@
               <p>Referencia</p>
             </label>
 
+            <label for="">
+              <input style="width: 100px" id="idcecontacto" type="text" name="contacto[entrega]" />
+              <p>Contacto</p>
+            </label>
+
           </div>
 
           <!-- Boton de envio y cancelar -->
@@ -573,8 +590,9 @@
         var idceEstado = document.getElementById("idceestado").value;
         var idceMunicipio = document.getElementById("idcemunicipio").value;
         var idcePais = document.getElementById("idcepais").value;
-        var idceColonia = document.getElementById("idcecolonia").value;
+        var idceColonia = document.getElementById("idcecolonia").value;idcecontacto
         var idceReferencia = document.getElementById("idcereferencia").value;
+        var idceContacto = document.getElementById("idcecontacto").value;
 
         if (idcClave != "") {
 
@@ -583,7 +601,8 @@
           document.getElementById("cmrfc").value = idcRfc;
           document.getElementById("cmdomfiscal").value = idcCalle + ", " + idcNumExt + ", " + idcColonia + ", " + idcCp + ", " + idcPoblacion;
           document.getElementById("cmdirentrega").value = idceCalle + ", " + idceNumExt + ", " + idceNumInt + ", " + idceColonia + ", " + idceEstado + ", " + idceCp + ", " + idceMunicipio + ", " + idcePais;
-          document.getElementById("cmnumcontacto").value = idceReferencia;
+          document.getElementById("cmnumcontacto").value = idceContacto;
+          document.getElementById("cmreferencia").value = idceReferencia;
 
           // Agregamos el tag al boton "Guardar"
           document.getElementById('idcguardar').setAttribute("href", "#main");
