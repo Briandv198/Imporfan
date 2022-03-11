@@ -284,7 +284,7 @@
                       <td class="opacity-0" colspan="4"></td>
                       <td class="little-font">Subtotal</td>
                       <td class="border-top">
-                        <input id="idsubtotal" name="" type="number" disabled="disabled" value="0" />
+                        <input id="idsubtotal" name="" disabled="disabled" value="0" />
                       </td>
                     </tr>
 
@@ -292,7 +292,7 @@
                       <td class="opacity-0" colspan="4"></td>
                       <td class="little-font">%</td>
                       <td class="border-top">
-                        <input id="idiva" name="" type="number" disabled="disabled" value="0" />
+                        <input id="idiva" name="" disabled="disabled" value="0" />
                       </td>
                     </tr>
 
@@ -300,7 +300,7 @@
                       <td class="border-bottom-left opacity-0" colspan="4"></td>
                       <td class="little-font">Total</td>
                       <td class="border-top">
-                        <input id="idtotal" name="" type="number" disabled="disabled" value="0" />
+                        <input id="idtotal" name="" disabled="disabled" value="0" />
                       </td>
                     </tr>
 
@@ -711,11 +711,11 @@
           // Agregamos valores a Iva
           let iva = document.getElementById('idiva');
           // iva += parseFloat(document.getElementById("esquema").value) * subtotal;
-          iva.value= parseFloat(0.16 * subtotal);
+          iva.value = parseFloat(0.16 * subtotal);
 
           // Agregamos valores a Total
           let total = document.getElementById('idtotal');
-          total.value = parseFloat(subtotal + iva.value);
+          total.value = parseFloat(subtotal) + parseFloat(iva.value);
 
       }
 
